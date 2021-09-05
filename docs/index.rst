@@ -1,16 +1,11 @@
-.. discord.py documentation master file, created by
-   sphinx-quickstart on Fri Aug 21 05:43:30 2015.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-Welcome to discord.py
+Welcome to DiscPy
 ===========================
 
 .. image:: /images/snake.svg
 .. image:: /images/snake_dark.svg
 
-discord.py is a modern, easy to use, feature-rich, and async ready API wrapper
-for Discord.
+DiscPy is a modern, easy to use, feature-rich, and async ready API wrapper for
+Discord written in Python, based on ``discord.py``.
 
 **Features:**
 
@@ -26,7 +21,7 @@ Getting started
 Is this your first time using the library? This is the place to get started!
 
 - **First steps:** :doc:`intro` | :doc:`quickstart` | :doc:`logging`
-- **Working with Discord:** :doc:`discord` | :doc:`intents`
+- **Working with Discord:** :doc:`discpy` | :doc:`intents`
 - **Examples:** Many examples are available in the :resource:`repository <examples>`.
 
 Getting help
@@ -60,8 +55,8 @@ These pages go into great detail about everything the API can do.
   :maxdepth: 1
 
   api
-  discord.ext.commands API Reference <ext/commands/api.rst>
-  discord.ext.tasks API Reference <ext/tasks/index.rst>
+  discpy.ext.commands API Reference <ext/commands/api.rst>
+  discpy.ext.tasks API Reference <ext/tasks/index.rst>
 
 Meta
 ------

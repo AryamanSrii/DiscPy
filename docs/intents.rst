@@ -1,13 +1,13 @@
 :orphan:
 
-.. currentmodule:: discord
+.. currentmodule:: discpy
 .. versionadded:: 1.5
 .. _intents_primer:
 
 A Primer to Gateway Intents
 =============================
 
-In version 1.5 comes the introduction of :class:`Intents`. This is a radical change in how bots are written. An intent basically allows a bot to subscribe to specific buckets of events. The events that correspond to each intent is documented in the individual attribute of the :class:`Intents` documentation.
+:class:`Intents` are a radical change in how bots are written. An intent basically allows a bot to subscribe to specific buckets of events. The events that correspond to each intent is documented in the individual attribute of the :class:`Intents` documentation.
 
 These intents are passed to the constructor of :class:`Client` or its subclasses (:class:`AutoShardedClient`, :class:`~.AutoShardedBot`, :class:`~.Bot`) with the ``intents`` argument.
 
@@ -23,15 +23,15 @@ For example, if you want a bot that functions without spammy events like presenc
 .. code-block:: python3
    :emphasize-lines: 7,9,10
 
-    import discord
-    intents = discord.Intents.default()
+    import discpy
+    intents = discpy.Intents.default()
     intents.typing = False
     intents.presences = False
 
     # Somewhere else:
-    # client = discord.Client(intents=intents)
+    # client = discpy.Client(intents=intents)
     # or
-    # from discord.ext import commands
+    # from discpy.ext import commands
     # bot = commands.Bot(command_prefix='!', intents=intents)
 
 Note that this doesn't enable :attr:`Intents.members` since it's a privileged intent.
@@ -41,15 +41,15 @@ Another example showing a bot that only deals with messages and guild informatio
 .. code-block:: python3
    :emphasize-lines: 7,9,10
 
-    import discord
-    intents = discord.Intents(messages=True, guilds=True)
+    import discpy
+    intents = discpy.Intents(messages=True, guilds=True)
     # If you also want reaction events enable the following:
     # intents.reactions = True
 
     # Somewhere else:
-    # client = discord.Client(intents=intents)
+    # client = discpy.Client(intents=intents)
     # or
-    # from discord.ext import commands
+    # from discpy.ext import commands
     # bot = commands.Bot(command_prefix='!', intents=intents)
 
 .. _privileged_intents:
@@ -152,7 +152,7 @@ Troubleshooting
 
 Some common issues relating to the mandatory intent change.
 
-Where'd my members go?
+Where did my members go?
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Due to an :ref:`API change <intents_member_cache>` Discord is now forcing developers who want member caching to explicitly opt-in to it. This is a Discord mandated change and there is no way to bypass it. In order to get members back you have to explicitly enable the :ref:`members privileged intent <privileged_intents>` and change the :attr:`Intents.members` attribute to true.
@@ -162,14 +162,14 @@ For example:
 .. code-block:: python3
    :emphasize-lines: 3,6,8,9
 
-    import discord
-    intents = discord.Intents.default()
+    import discpy
+    intents = discpy.Intents.default()
     intents.members = True
 
     # Somewhere else:
-    # client = discord.Client(intents=intents)
+    # client = discpy.Client(intents=intents)
     # or
-    # from discord.ext import commands
+    # from discpy.ext import commands
     # bot = commands.Bot(command_prefix='!', intents=intents)
 
 Why does ``on_ready`` take so long to fire?
@@ -188,5 +188,3 @@ To illustrate the slowdown caused by the API change, take a bot who is in 840 gu
 Under the original system this would result in 2 requests to fetch the member list (75 guilds, 20 guilds) roughly taking 60 seconds. With :attr:`Intents.members` but not :attr:`Intents.presences` this requires 840 requests, with a rate limit of 120 requests per 60 seconds means that due to waiting for the rate limit it totals to around 7 minutes of waiting for the rate limit to fetch all the members. With both :attr:`Intents.members` and :attr:`Intents.presences` we mostly get the old behaviour so we're only required to request for the 95 guilds that are large, this is slightly less than our rate limit so it's close to the original timing to fetch the member list.
 
 Unfortunately due to this change being required from Discord there is nothing that the library can do to mitigate this.
-
-If you truly dislike the direction Discord is going with their API, you can contact them via `support <https://dis.gd/contact>`_.
