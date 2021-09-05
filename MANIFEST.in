@@ -1,5 +1,5 @@
 include README.md
 include LICENSE
 include requirements.txt
-include pydiscord/bin/*.dll
-include pydiscord/py.typed
+include discpy/bin/*.dll
+include discpy/py.typed

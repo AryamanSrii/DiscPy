@@ -1,6 +1,6 @@
 # DiscPy
 
-[![Discord server invite](https://discord.com/api/guilds/336642139381301249/embed.png)](https://discord.gg/r3sSKJJ) [![PyPI version info](https://img.shields.io/pypi/v/discord.py.svg)](https://pypi.python.org/pypi/pydiscord) [![PyPI supported Python versions](https://img.shields.io/pypi/pyversions/pydiscord.svg)](https://pypi.python.org/pypi/pydiscord)
+[![Discord server invite](https://discord.com/api/guilds/884072759540461568/embed.png)](https://discord.gg/z5VQEjskEs) [![PyPI version info](https://img.shields.io/pypi/v/discpy.svg)](https://pypi.python.org/pypi/discpy) [![PyPI supported Python versions](https://img.shields.io/pypi/pyversions/discpy.svg)](https://pypi.python.org/pypi/discpy)
 
 A modern, easy to use, feature-rich, and async ready API wrapper for
 Discord written in Python, based on `discord.py`.
@@ -99,7 +99,8 @@ You can find more examples in the `examples` directory.
 ## Links
 
 -   [Documentation](https://discpy.readthedocs.io/en/latest/index.html)
--   [Official Discord Server](https://discord.gg/r3sSKJJ)
+-   [Issue Tracker](https://github.com/DiscPy/DiscPy/issues)
+-   [Support Server](https://discord.gg/z5VQEjskEs)
 
 ## License
 

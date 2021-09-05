@@ -67,6 +67,7 @@ setup(
     project_urls={
         "Documentation": "https://discpy.readthedocs.io/en/latest/",
         "Issue tracker": "https://github.com/DiscPy/DiscPy/issues",
+        "Support Server": "https://discord.gg/z5VQEjskEs",
     },
     version=version,
     packages=packages,

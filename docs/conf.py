@@ -49,7 +49,7 @@ autodoc_typehints = "none"
 # napoleon_attr_annotations = False
 
 extlinks = {
-    "issue": ("https://github.com/Rapptz/discord.py/issues/%s", "GH-"),
+    "issue": ("https://github.com/DiscPy/DiscPy/issues/%s", "GH-"),
 }
 
 # Links used for cross-referencing stuff in other documentation
@@ -79,8 +79,8 @@ source_suffix = ".rst"
 master_doc = "index"
 
 # General information about the project.
-project = "discpy.py"
-copyright = "2015-present, Rapptz"
+project = "DiscPy"
+copyright = "2021, The DiscPy Developers"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -161,7 +161,7 @@ html_experimental_html5_writer = True
 html_theme = "basic"
 
 html_context = {
-    "discord_invite": "https://discord.gg/r3sSKJJ",
+    "discord_invite": "https://discord.gg/z5VQEjskEs",
     "discord_extensions": [
         ("discpy.ext.commands", "ext/commands"),
         ("discpy.ext.tasks", "ext/tasks"),
@@ -169,10 +169,10 @@ html_context = {
 }
 
 resource_links = {
-    "discpy": "https://discord.gg/r3sSKJJ",
-    "issues": "https://github.com/Rapptz/discord.py/issues",
-    "discussions": "https://github.com/Rapptz/discord.py/discussions",
-    "examples": f"https://github.com/Rapptz/discord.py/tree/{branch}/examples",
+    "discpy": "https://discord.gg/z5VQEjskEs",
+    "issues": "https://github.com/DiscPy/DiscPy/issues",
+    "discussions": "https://github.com/DiscPy/DiscPy/discussions",
+    "examples": f"https://github.com/DiscPy/DiscPy/tree/{branch}/examples",
 }
 
 # Theme options are theme-specific and customize the look and feel of a theme
@@ -198,7 +198,7 @@ resource_links = {
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
-html_favicon = "./images/discord_py_logo.ico"
+html_favicon = "./images/discpy_logo.ico"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -268,7 +268,7 @@ html_search_scorer = "_static/scorer.js"
 html_js_files = ["custom.js", "settings.js", "copy.js", "sidebar.js"]
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "discpy.pydoc"
+htmlhelp_basename = "DiscPy.pydoc"
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -287,7 +287,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    ("index", "discpy.py.tex", "discpy.py Documentation", "Rapptz", "manual"),
+    ("index", "DiscPy.tex", "DiscPy Documentation", "The DiscPy Developers", "manual"),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -315,7 +315,7 @@ latex_documents = [
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [("index", "discpy.py", "discpy.py Documentation", ["Rapptz"], 1)]
+man_pages = [("index", "DiscPy", "DiscPy Documentation", ["The DiscPy Developers"], 1)]
 
 # If true, show URL addresses after external links.
 # man_show_urls = False
@@ -329,11 +329,11 @@ man_pages = [("index", "discpy.py", "discpy.py Documentation", ["Rapptz"], 1)]
 texinfo_documents = [
     (
         "index",
-        "discpy.py",
-        "discpy.py Documentation",
-        "Rapptz",
-        "discpy.py",
-        "One line description of project.",
+        "DiscPy",
+        "DiscPy Documentation",
+        "The DiscPy Developers",
+        "DiscPy",
+        "A modern, easy-to-use, feature-rich, and async-ready API wrapper for Discord written in Python, based on discord.py",
         "Miscellaneous",
     ),
 ]
@@ -354,5 +354,5 @@ texinfo_documents = [
 def setup(app):
     if app.config.language == "ja":
         app.config.intersphinx_mapping["py"] = ("https://docs.python.org/ja/3", None)
-        app.config.html_context["discord_invite"] = "https://discord.gg/nXzj3dg"
-        app.config.resource_links["discpy"] = "https://discord.gg/nXzj3dg"
+        app.config.html_context["discord_invite"] = "https://discord.gg/z5VQEjskEs"
+        app.config.resource_links["discpy"] = "https://discord.gg/z5VQEjskEs"
