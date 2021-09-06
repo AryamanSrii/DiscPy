@@ -162,7 +162,7 @@ html_theme = "basic"
 
 html_context = {
     "discord_invite": "https://discord.gg/z5VQEjskEs",
-    "discord_extensions": [
+    "discpy_extensions": [
         ("discpy.ext.commands", "ext/commands"),
         ("discpy.ext.tasks", "ext/tasks"),
     ],
