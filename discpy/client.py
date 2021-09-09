@@ -891,7 +891,7 @@ class Client:
 
         Returns
         --------
-        Optional[:class:`~discord.User`]
+        Optional[:class:`~discpy.User`]
             The user or ``None`` if not found.
         """
         return self._connection.get_user(id)
@@ -1536,7 +1536,7 @@ class Client:
 
         Returns
         --------
-        :class:`~discord.User`
+        :class:`~discpy.User`
             The user you requested.
         """
         data = await self.http.get_user(user_id)
@@ -1673,7 +1673,7 @@ class Client:
 
         Parameters
         -----------
-        user: :class:`~discord.abc.Snowflake`
+        user: :class:`~discpy.abc.Snowflake`
             The user to create a DM with.
 
         Returns
@@ -1699,7 +1699,7 @@ class Client:
 
         Parameters
         ------------
-        view: :class:`discord.ui.View`
+        view: :class:`discpy.ui.View`
             The view to register for dispatching.
         message_id: Optional[:class:`int`]
             The message ID that the view is attached to. This is currently used to

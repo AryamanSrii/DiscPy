@@ -906,7 +906,7 @@ class BotBase(GroupMixin):
 
         Parameters
         -----------
-        message: :class:`discord.Message`
+        message: :class:`discpy.Message`
             The message context to get the prefix of.
 
         Returns
@@ -955,7 +955,7 @@ class BotBase(GroupMixin):
 
         Parameters
         -----------
-        message: :class:`discord.Message`
+        message: :class:`discpy.Message`
             The message to get the invocation context from.
         cls
             The factory class that will be used to create the context.
@@ -1064,7 +1064,7 @@ class BotBase(GroupMixin):
 
         Parameters
         -----------
-        message: :class:`discord.Message`
+        message: :class:`discpy.Message`
             The message to process commands for.
         """
         if message.author.bot:

@@ -335,7 +335,7 @@ class Thread(Messageable, Hashable):
 
         Parameters
         ----------
-        obj: Union[:class:`~discord.Member`, :class:`~discord.Role`]
+        obj: Union[:class:`~discpy.Member`, :class:`~discpy.Role`]
             The object to resolve permissions for. This could be either
             a member or a role. If it's a role then member overwrites
             are not computed.
@@ -347,7 +347,7 @@ class Thread(Messageable, Hashable):
 
         Returns
         -------
-        :class:`~discord.Permissions`
+        :class:`~discpy.Permissions`
             The resolved permissions for the member or role.
         """
 

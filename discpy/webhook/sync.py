@@ -976,7 +976,7 @@ class SyncWebhook(BaseWebhook):
             Controls the mentions being processed in this message.
 
             .. versionadded:: 1.4
-        thread: :class:`~discord.abc.Snowflake`
+        thread: :class:`~discpy.abc.Snowflake`
             The thread to send this message to.
 
             .. versionadded:: 2.0
@@ -1066,7 +1066,7 @@ class SyncWebhook(BaseWebhook):
 
         Returns
         --------
-        :class:`~discord.SyncWebhookMessage`
+        :class:`~discpy.SyncWebhookMessage`
             The message asked for.
         """
 

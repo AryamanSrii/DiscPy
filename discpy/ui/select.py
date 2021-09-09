@@ -77,7 +77,7 @@ class Select(Item[V]):
     max_values: :class:`int`
         The maximum number of items that must be chosen for this select menu.
         Defaults to 1 and must be between 1 and 25.
-    options: List[:class:`discord.SelectOption`]
+    options: List[:class:`discpy.SelectOption`]
         A list of options that can be selected in this menu.
     disabled: :class:`bool`
         Whether the select is disabled or not.
@@ -232,7 +232,7 @@ class Select(Item[V]):
 
         Parameters
         -----------
-        option: :class:`discord.SelectOption`
+        option: :class:`discpy.SelectOption`
             The option to append to the select menu.
 
         Raises
@@ -332,7 +332,7 @@ def select(
     max_values: :class:`int`
         The maximum number of items that must be chosen for this select menu.
         Defaults to 1 and must be between 1 and 25.
-    options: List[:class:`discord.SelectOption`]
+    options: List[:class:`discpy.SelectOption`]
         A list of options that can be selected in this menu.
     disabled: :class:`bool`
         Whether the select is disabled or not. Defaults to ``False``.
@@ -342,8 +342,8 @@ def select(
         if not inspect.iscoroutinefunction(func):
             raise TypeError("select function must be a coroutine function")
 
-        func.__discord_ui_model_type__ = Select
-        func.__discord_ui_model_kwargs__ = {
+        func.__discpy_ui_model_type__ = Select
+        func.__discpy_ui_model_kwargs__ = {
             "placeholder": placeholder,
             "custom_id": custom_id,
             "row": row,

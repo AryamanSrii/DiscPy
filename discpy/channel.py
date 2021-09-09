@@ -2078,7 +2078,7 @@ class GroupChannel(discpy.abc.Messageable, Hashable):
 
         Parameters
         -----------
-        obj: :class:`~discord.abc.Snowflake`
+        obj: :class:`~discpy.abc.Snowflake`
             The user to check permissions for.
 
         Returns

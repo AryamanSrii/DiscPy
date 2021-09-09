@@ -464,7 +464,7 @@ class MessageReference:
 
         Parameters
         ----------
-        message: :class:`~discord.Message`
+        message: :class:`~discpy.Message`
             The message to be converted into a reference.
         fail_if_not_exists: :class:`bool`
             Whether replying to the referenced message should raise :class:`HTTPException`
@@ -572,7 +572,7 @@ class Message(Hashable):
     channel: Union[:class:`TextChannel`, :class:`Thread`, :class:`DMChannel`, :class:`GroupChannel`, :class:`PartialMessageable`]
         The :class:`TextChannel` or :class:`Thread` that the message was sent from.
         Could be a :class:`DMChannel` or :class:`GroupChannel` if it's a private message.
-    reference: Optional[:class:`~discord.MessageReference`]
+    reference: Optional[:class:`~discpy.MessageReference`]
         The message that this message references. This is only applicable to messages of
         type :attr:`MessageType.pins_add`, crossposted messages created by a
         followed channel integration, or message replies.
@@ -1280,7 +1280,7 @@ class Message(Hashable):
             If provided, the number of seconds to wait in the background
             before deleting the message we just edited. If the deletion fails,
             then it is silently ignored.
-        allowed_mentions: Optional[:class:`~discord.AllowedMentions`]
+        allowed_mentions: Optional[:class:`~discpy.AllowedMentions`]
             Controls the mentions being processed in this message. If this is
             passed, then the object is merged with :attr:`~discpy.Client.allowed_mentions`.
             The merging behaviour only overrides attributes that have been explicitly passed
@@ -1289,7 +1289,7 @@ class Message(Hashable):
             are used instead.
 
             .. versionadded:: 1.4
-        view: Optional[:class:`~discord.ui.View`]
+        view: Optional[:class:`~discpy.ui.View`]
             The updated view to update this message with. If ``None`` is passed then
             the view is removed.
 
@@ -1655,7 +1655,7 @@ class Message(Hashable):
 
         Returns
         ---------
-        :class:`~discord.MessageReference`
+        :class:`~discpy.MessageReference`
             The reference to this message.
         """
 
@@ -1816,14 +1816,14 @@ class PartialMessage(Hashable):
             If provided, the number of seconds to wait in the background
             before deleting the message we just edited. If the deletion fails,
             then it is silently ignored.
-        allowed_mentions: Optional[:class:`~discord.AllowedMentions`]
+        allowed_mentions: Optional[:class:`~discpy.AllowedMentions`]
             Controls the mentions being processed in this message. If this is
             passed, then the object is merged with :attr:`~discpy.Client.allowed_mentions`.
             The merging behaviour only overrides attributes that have been explicitly passed
             to the object, otherwise it uses the attributes set in :attr:`~discpy.Client.allowed_mentions`.
             If no object is passed at all then the defaults given by :attr:`~discpy.Client.allowed_mentions`
             are used instead.
-        view: Optional[:class:`~discord.ui.View`]
+        view: Optional[:class:`~discpy.ui.View`]
             The updated view to update this message with. If ``None`` is passed then
             the view is removed.
 

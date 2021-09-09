@@ -55,7 +55,7 @@ class Button(Item[V]):
 
     Parameters
     ------------
-    style: :class:`discord.ButtonStyle`
+    style: :class:`discpy.ButtonStyle`
         The style of the button.
     custom_id: Optional[:class:`str`]
         The ID of the button that gets received during an interaction.
@@ -280,8 +280,8 @@ def button(
         if not inspect.iscoroutinefunction(func):
             raise TypeError("button function must be a coroutine function")
 
-        func.__discord_ui_model_type__ = Button
-        func.__discord_ui_model_kwargs__ = {
+        func.__discpy_ui_model_type__ = Button
+        func.__discpy_ui_model_kwargs__ = {
             "style": style,
             "custom_id": custom_id,
             "url": None,

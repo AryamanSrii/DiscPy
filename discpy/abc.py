@@ -111,7 +111,7 @@ _undefined: Any = _Undefined()
 class Snowflake(Protocol):
     """An ABC that details the common operations on a Discord model.
 
-    Almost all :ref:`Discord models <discord_api_models>` meet this
+    Almost all :ref:`Discord models <discpy_api_models>` meet this
     abstract base class.
 
     If you want to create a snowflake on your own, consider using
@@ -145,7 +145,7 @@ class User(Snowflake, Protocol):
         The user's username.
     discriminator: :class:`str`
         The user's discriminator.
-    avatar: :class:`~discord.Asset`
+    avatar: :class:`~discpy.Asset`
         The avatar asset the user has.
     bot: :class:`bool`
         If the user is a bot account.
@@ -182,7 +182,7 @@ class PrivateChannel(Snowflake, Protocol):
 
     Attributes
     -----------
-    me: :class:`~discord.ClientUser`
+    me: :class:`~discpy.ClientUser`
         The user presenting yourself.
     """
 
@@ -237,7 +237,7 @@ class GuildChannel:
     -----------
     name: :class:`str`
         The channel name.
-    guild: :class:`~discord.Guild`
+    guild: :class:`~discpy.Guild`
         The guild the channel belongs to.
     position: :class:`int`
         The position in the channel list. This is a number that starts at 0.
@@ -466,13 +466,13 @@ class GuildChannel:
 
         Parameters
         -----------
-        obj: Union[:class:`~discord.Role`, :class:`~discord.abc.User`]
+        obj: Union[:class:`~discpy.Role`, :class:`~discpy.abc.User`]
             The role or user denoting
             whose overwrite to get.
 
         Returns
         ---------
-        :class:`~discord.PermissionOverwrite`
+        :class:`~discpy.PermissionOverwrite`
             The permission overwrites for this object.
         """
 
@@ -501,7 +501,7 @@ class GuildChannel:
 
         Returns
         --------
-        Dict[Union[:class:`~discord.Role`, :class:`~discord.Member`], :class:`~discord.PermissionOverwrite`]
+        Dict[Union[:class:`~discpy.Role`, :class:`~discpy.Member`], :class:`~discpy.PermissionOverwrite`]
             The channel's permission overwrites.
         """
         ret = {}
@@ -572,14 +572,14 @@ class GuildChannel:
 
         Parameters
         ----------
-        obj: Union[:class:`~discord.Member`, :class:`~discord.Role`]
+        obj: Union[:class:`~discpy.Member`, :class:`~discpy.Role`]
             The object to resolve permissions for. This could be either
             a member or a role. If it's a role then member overwrites
             are not computed.
 
         Returns
         -------
-        :class:`~discord.Permissions`
+        :class:`~discpy.Permissions`
             The resolved permissions for the member or role.
         """
 
@@ -779,9 +779,9 @@ class GuildChannel:
 
         Parameters
         -----------
-        target: Union[:class:`~discord.Member`, :class:`~discord.Role`]
+        target: Union[:class:`~discpy.Member`, :class:`~discpy.Role`]
             The member or role to overwrite permissions for.
-        overwrite: Optional[:class:`~discord.PermissionOverwrite`]
+        overwrite: Optional[:class:`~discpy.PermissionOverwrite`]
             The permissions to allow and deny to the target, or ``None`` to
             delete the overwrite.
         \*\*permissions
@@ -966,10 +966,10 @@ class GuildChannel:
             Whether to move the channel to the end of the
             channel list (or category if given).
             This is mutually exclusive with ``beginning``, ``before``, and ``after``.
-        before: :class:`~discord.abc.Snowflake`
+        before: :class:`~discpy.abc.Snowflake`
             The channel that should be before our current channel.
             This is mutually exclusive with ``beginning``, ``end``, and ``after``.
-        after: :class:`~discord.abc.Snowflake`
+        after: :class:`~discpy.abc.Snowflake`
             The channel that should be after our current channel.
             This is mutually exclusive with ``beginning``, ``end``, and ``before``.
         offset: :class:`int`
@@ -979,7 +979,7 @@ class GuildChannel:
             while a negative number moves it above. Note that this
             number is relative and computed after the ``beginning``,
             ``end``, ``before``, and ``after`` parameters.
-        category: Optional[:class:`~discord.abc.Snowflake`]
+        category: Optional[:class:`~discpy.abc.Snowflake`]
             The category to move this channel under.
             If ``None`` is given then it moves it out of the category.
             This parameter is ignored if moving a category channel.
@@ -1129,7 +1129,7 @@ class GuildChannel:
 
         Returns
         --------
-        :class:`~discord.Invite`
+        :class:`~discpy.Invite`
             The invite that was created.
         """
 
@@ -1162,7 +1162,7 @@ class GuildChannel:
 
         Returns
         -------
-        List[:class:`~discord.Invite`]
+        List[:class:`~discpy.Invite`]
             The list of invites that are currently active.
         """
 
@@ -1308,11 +1308,11 @@ class Messageable:
             The content of the message to send.
         tts: :class:`bool`
             Indicates if the message should be sent using text-to-speech.
-        embed: :class:`~discord.Embed`
+        embed: :class:`~discpy.Embed`
             The rich embed for the content.
-        file: :class:`~discord.File`
+        file: :class:`~discpy.File`
             The file to upload.
-        files: List[:class:`~discord.File`]
+        files: List[:class:`~discpy.File`]
             A list of files to upload. Must be a maximum of 10.
         nonce: :class:`int`
             The nonce to use for sending this message. If the message was successfully sent,
@@ -1321,7 +1321,7 @@ class Messageable:
             If provided, the number of seconds to wait in the background
             before deleting the message we just sent. If the deletion fails,
             then it is silently ignored.
-        allowed_mentions: :class:`~discord.AllowedMentions`
+        allowed_mentions: :class:`~discpy.AllowedMentions`
             Controls the mentions being processed in this message. If this is
             passed, then the object is merged with :attr:`~discpy.Client.allowed_mentions`.
             The merging behaviour only overrides attributes that have been explicitly passed
@@ -1331,7 +1331,7 @@ class Messageable:
 
             .. versionadded:: 1.4
 
-        reference: Union[:class:`~discord.Message`, :class:`~discord.MessageReference`, :class:`~discord.PartialMessage`]
+        reference: Union[:class:`~discpy.Message`, :class:`~discpy.MessageReference`, :class:`~discpy.PartialMessage`]
             A reference to the :class:`~discpy.Message` to which you are replying, this can be created using
             :meth:`~discpy.Message.to_reference` or passed directly as a :class:`~discpy.Message`. You can control
             whether this mentions the author of the referenced message using the :attr:`~discpy.AllowedMentions.replied_user`
@@ -1343,13 +1343,13 @@ class Messageable:
             If set, overrides the :attr:`~discpy.AllowedMentions.replied_user` attribute of ``allowed_mentions``.
 
             .. versionadded:: 1.6
-        view: :class:`discord.ui.View`
+        view: :class:`discpy.ui.View`
             A Discord UI View to add to the message.
-        embeds: List[:class:`~discord.Embed`]
+        embeds: List[:class:`~discpy.Embed`]
             A list of embeds to upload. Must be a maximum of 10.
 
             .. versionadded:: 2.0
-        stickers: Sequence[Union[:class:`~discord.GuildSticker`, :class:`~discord.StickerItem`]]
+        stickers: Sequence[Union[:class:`~discpy.GuildSticker`, :class:`~discpy.StickerItem`]]
             A list of stickers to upload. Must be a maximum of 3.
 
             .. versionadded:: 2.0
@@ -1369,7 +1369,7 @@ class Messageable:
 
         Returns
         ---------
-        :class:`~discord.Message`
+        :class:`~discpy.Message`
             The message that was sent.
         """
 
@@ -1420,7 +1420,7 @@ class Messageable:
                 ) from None
 
         if view:
-            if not hasattr(view, "__discord_ui_view__"):
+            if not hasattr(view, "__discpy_ui_view__"):
                 raise InvalidArgument(
                     f"view parameter must be View not {view.__class__!r}"
                 )
@@ -1553,7 +1553,7 @@ class Messageable:
 
         Returns
         --------
-        :class:`~discord.Message`
+        :class:`~discpy.Message`
             The message asked for.
         """
 
@@ -1579,7 +1579,7 @@ class Messageable:
 
         Returns
         --------
-        List[:class:`~discord.Message`]
+        List[:class:`~discpy.Message`]
             The messages that are currently pinned.
         """
 
@@ -1624,15 +1624,15 @@ class Messageable:
             The number of messages to retrieve.
             If ``None``, retrieves every message in the channel. Note, however,
             that this would make it a slow operation.
-        before: Optional[Union[:class:`~discord.abc.Snowflake`, :class:`datetime.datetime`]]
+        before: Optional[Union[:class:`~discpy.abc.Snowflake`, :class:`datetime.datetime`]]
             Retrieve messages before this date or message.
             If a datetime is provided, it is recommended to use a UTC aware datetime.
             If the datetime is naive, it is assumed to be local time.
-        after: Optional[Union[:class:`~discord.abc.Snowflake`, :class:`datetime.datetime`]]
+        after: Optional[Union[:class:`~discpy.abc.Snowflake`, :class:`datetime.datetime`]]
             Retrieve messages after this date or message.
             If a datetime is provided, it is recommended to use a UTC aware datetime.
             If the datetime is naive, it is assumed to be local time.
-        around: Optional[Union[:class:`~discord.abc.Snowflake`, :class:`datetime.datetime`]]
+        around: Optional[Union[:class:`~discpy.abc.Snowflake`, :class:`datetime.datetime`]]
             Retrieve messages around this date or message.
             If a datetime is provided, it is recommended to use a UTC aware datetime.
             If the datetime is naive, it is assumed to be local time.
@@ -1725,7 +1725,7 @@ class Connectable(Protocol):
 
         Returns
         --------
-        :class:`~discord.VoiceProtocol`
+        :class:`~discpy.VoiceProtocol`
             A voice client that is fully connected to the voice server.
         """
 

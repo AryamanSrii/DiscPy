@@ -335,7 +335,7 @@ class DiscordWebSocket:
         # dynamically add attributes needed
         ws.token = client.http.token
         ws._connection = client._connection
-        ws._discord_parsers = client._connection.parsers
+        ws._discpy_parsers = client._connection.parsers
         ws._dispatch = client.dispatch
         ws.gateway = gateway
         ws.call_hooks = client._connection.call_hooks
@@ -542,7 +542,7 @@ class DiscordWebSocket:
             )
 
         try:
-            func = self._discord_parsers[event]
+            func = self._discpy_parsers[event]
         except KeyError:
             _log.debug("Unknown event %s.", event)
         else:

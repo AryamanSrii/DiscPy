@@ -147,14 +147,14 @@ class View:
         The list of children attached to this view.
     """
 
-    __discord_ui_view__: ClassVar[bool] = True
+    __discpy_ui_view__: ClassVar[bool] = True
     __view_children_items__: ClassVar[List[ItemCallbackType]] = []
 
     def __init_subclass__(cls) -> None:
         children: List[ItemCallbackType] = []
         for base in reversed(cls.__mro__):
             for member in base.__dict__.values():
-                if hasattr(member, "__discord_ui_model_type__"):
+                if hasattr(member, "__discpy_ui_model_type__"):
                     children.append(member)
 
         if len(children) > 25:
@@ -166,8 +166,8 @@ class View:
         self.timeout = timeout
         self.children: List[Item] = []
         for func in self.__view_children_items__:
-            item: Item = func.__discord_ui_model_type__(
-                **func.__discord_ui_model_kwargs__
+            item: Item = func.__discpy_ui_model_type__(
+                **func.__discpy_ui_model_kwargs__
             )
             item.callback = partial(func, self, item)
             item._view = self
@@ -235,7 +235,7 @@ class View:
 
         Parameters
         -----------
-        message: :class:`discord.Message`
+        message: :class:`discpy.Message`
             The message with components to convert into a view.
         timeout: Optional[:class:`float`]
             The timeout of the converted view.
@@ -324,7 +324,7 @@ class View:
 
         Parameters
         -----------
-        interaction: :class:`~discord.Interaction`
+        interaction: :class:`~discpy.Interaction`
             The interaction that occurred.
 
         Returns
@@ -357,7 +357,7 @@ class View:
             The exception that was raised.
         item: :class:`Item`
             The item that failed the dispatch.
-        interaction: :class:`~discord.Interaction`
+        interaction: :class:`~discpy.Interaction`
             The interaction that led to the failure.
         """
         print(f"Ignoring exception in view {self} for item {item}:", file=sys.stderr)

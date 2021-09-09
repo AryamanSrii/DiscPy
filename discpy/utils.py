@@ -286,10 +286,10 @@ def oauth_url(
     -----------
     client_id: Union[:class:`int`, :class:`str`]
         The client ID for your bot.
-    permissions: :class:`~discord.Permissions`
+    permissions: :class:`~discpy.Permissions`
         The permissions you're requesting. If not given then you won't be requesting any
         permissions.
-    guild: :class:`~discord.abc.Snowflake`
+    guild: :class:`~discpy.abc.Snowflake`
         The guild to pre-select in the authorization screen, if available.
     redirect_uri: :class:`str`
         An optional valid redirect URI.
@@ -360,8 +360,8 @@ def time_snowflake(dt: datetime.datetime, high: bool = False) -> int:
     :class:`int`
         The snowflake representing the time given.
     """
-    discord_millis = int(dt.timestamp() * 1000 - DISCORD_EPOCH)
-    return (discord_millis << 22) + (2 ** 22 - 1 if high else 0)
+    discpy_millis = int(dt.timestamp() * 1000 - DISCORD_EPOCH)
+    return (discpy_millis << 22) + (2 ** 22 - 1 if high else 0)
 
 
 def find(predicate: Callable[[T], Any], seq: Iterable[T]) -> Optional[T]:
@@ -661,7 +661,7 @@ def resolve_invite(invite: Union[Invite, str]) -> str:
 
     Parameters
     -----------
-    invite: Union[:class:`~discord.Invite`, :class:`str`]
+    invite: Union[:class:`~discpy.Invite`, :class:`str`]
         The invite.
 
     Returns
@@ -689,7 +689,7 @@ def resolve_template(code: Union[Template, str]) -> str:
 
     Parameters
     -----------
-    code: Union[:class:`~discord.Template`, :class:`str`]
+    code: Union[:class:`~discpy.Template`, :class:`str`]
         The code.
 
     Returns
