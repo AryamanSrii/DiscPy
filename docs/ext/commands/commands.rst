@@ -1,4 +1,4 @@
-.. currentmodule:: discord
+.. currentmodule:: discpy
 
 .. _ext_commands_commands:
 

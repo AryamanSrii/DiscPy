@@ -1,4 +1,4 @@
-.. currentmodule:: discord
+.. currentmodule:: discpy
 
 API Reference
 ===============
