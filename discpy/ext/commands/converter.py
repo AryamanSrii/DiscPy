@@ -347,7 +347,7 @@ class PartialMessageConverter(Converter[discpy.PartialMessage]):
             r"(?:(?P<channel_id>[0-9]{15,20})-)?(?P<message_id>[0-9]{15,20})$"
         )
         link_regex = re.compile(
-            r"https?://(?:(ptb|canary|www)\.)?discpy(?:app)?\.com/channels/"
+            r"https?://(?:(ptb|canary|www)\.)?discord(?:app)?\.com/channels/"
             r"(?P<guild_id>[0-9]{15,20}|@me)"
             r"/(?P<channel_id>[0-9]{15,20})/(?P<message_id>[0-9]{15,20})/?$"
         )
