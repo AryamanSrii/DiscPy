@@ -24,7 +24,7 @@ function __score(haystack, regex) {
 
 // unused for now
 function __cleanNamespaces(query) {
-    return query.replace(/(discord\.(ext\.)?)?(.+)/, '$3');
+    return query.replace(/(discpy\.(ext\.)?)?(.+)/, '$3');
 }
 
 Scorer = {
