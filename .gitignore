@@ -11,7 +11,6 @@ docs/crowdin.py
 *.mp3
 *.m4a
 *.wav
-*.png
 *.jpg
 *.flac
 *.mo
