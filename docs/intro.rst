@@ -7,13 +7,13 @@
 Introduction
 ==============
 
-This is the documentation for discord.py, a library for Python to aid
+This is the documentation for ``discpy``, a library for Python to aid
 in creating applications that utilise the Discord API.
 
 Prerequisites
 ---------------
 
-discord.py works with Python 3.8 or higher. Support for earlier versions of Python
+``discpy`` works with Python 3.8 or higher. Support for earlier versions of Python
 is not provided. Python 2.7 or lower is not supported. Python 3.7 or lower is not supported.
 
 
@@ -24,16 +24,16 @@ Installing
 
 You can get the library directly from PyPI: ::
 
-    python3 -m pip install -U discord.py
+    python3 -m pip install -U discpy
 
 If you are using Windows, then the following should be used instead: ::
 
-    py -3 -m pip install -U discord.py
+    py -3 -m pip install -U discpy
 
 
-To get voice support, you should use ``discord.py[voice]`` instead of ``discord.py``, e.g. ::
+To get voice support, you should use ``discpy[voice]`` instead of ``discpy``, e.g. ::
 
-    python3 -m pip install -U discord.py[voice]
+    python3 -m pip install -U discpy[voice]
 
 On Linux environments, installing voice requires getting the following dependencies:
 
@@ -84,14 +84,14 @@ However, for the quick and dirty:
 
     .. code-block:: shell
 
-        $ pip install -U discord.py
+        $ pip install -U discpy
 
 Congratulations. You now have a virtual environment all set up.
 
 Basic Concepts
 ---------------
 
-discord.py revolves around the concept of :ref:`events <discord-api-events>`.
+discpy revolves around the concept of :ref:`events <discpy-api-events>`.
 An event is something you listen to and then respond to. For example, when a message
 happens, you will receive an event about it that you can respond to.
 
@@ -99,9 +99,9 @@ A quick example to showcase how events work:
 
 .. code-block:: python3
 
-    import discord
+    import discpy
 
-    class MyClient(discord.Client):
+    class MyClient(discpy.Client):
         async def on_ready(self):
             print(f'Logged on as {self.user}!')
 
