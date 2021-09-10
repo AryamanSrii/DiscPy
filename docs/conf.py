@@ -168,7 +168,7 @@ html_context = {
 }
 
 resource_links = {
-    "discpy": "https://discord.gg/z5VQEjskEs",
+    "discord": "https://discord.gg/z5VQEjskEs",
     "issues": "https://github.com/DiscPy/DiscPy/issues",
     "discussions": "https://github.com/DiscPy/DiscPy/discussions",
     "examples": f"https://github.com/DiscPy/DiscPy/tree/{branch}/examples",
@@ -354,4 +354,4 @@ def setup(app):
     if app.config.language == "ja":
         app.config.intersphinx_mapping["py"] = ("https://docs.python.org/ja/3", None)
         app.config.html_context["discord_invite"] = "https://discord.gg/z5VQEjskEs"
-        app.config.resource_links["discpy"] = "https://discord.gg/z5VQEjskEs"
+        app.config.resource_links["discord"] = "https://discord.gg/z5VQEjskEs"
