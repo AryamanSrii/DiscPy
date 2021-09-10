@@ -2,6 +2,7 @@
 *.py[cod]
 *.log
 *.egg-info
+build
 venv
 .venv
 .idea
