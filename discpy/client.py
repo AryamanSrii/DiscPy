@@ -1392,7 +1392,7 @@ class Client:
     ) -> Invite:
         """|coro|
 
-        Gets an :class:`.Invite` from a discpy.gg URL or ID.
+        Gets an :class:`.Invite` from a discord.gg URL or ID.
 
         .. note::
 
@@ -1403,7 +1403,7 @@ class Client:
         Parameters
         -----------
         url: Union[:class:`.Invite`, :class:`str`]
-            The Discord invite ID or URL (must be a discpy.gg URL).
+            The Discord invite ID or URL (must be a discord.gg URL).
         with_counts: :class:`bool`
             Whether to include count information in the invite. This fills the
             :attr:`.Invite.approximate_member_count` and :attr:`.Invite.approximate_presence_count`
