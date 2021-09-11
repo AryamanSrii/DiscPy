@@ -54,7 +54,7 @@ following packages via your favourite package manager (e.g. `apt`,
 `dnf`, etc) before running the above commands:
 
 -   libffi-dev (or `libffi-devel` on some systems)
--   python-dev (e.g. `python3.6-dev` for Python 3.6)
+-   python-dev (e.g. `python3.8-dev` for Python 3.8)
 
 ## Quick Example
 
