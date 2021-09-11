@@ -57,7 +57,7 @@ __all__ = (
 
 
 class DiscordException(Exception):
-    """Base exception class for discpy.py
+    """Base exception class for discpy
 
     Ideally speaking, this could be caught to handle any exceptions raised from this library.
     """

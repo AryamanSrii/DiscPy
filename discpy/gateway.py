@@ -400,8 +400,8 @@ class DiscordWebSocket:
                 "token": self.token,
                 "properties": {
                     "$os": sys.platform,
-                    "$browser": "discpy.py",
-                    "$device": "discpy.py",
+                    "$browser": "DiscPy",
+                    "$device": "DiscPy",
                     "$referrer": "",
                     "$referring_domain": "",
                 },

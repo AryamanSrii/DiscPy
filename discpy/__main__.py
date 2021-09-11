@@ -42,14 +42,14 @@ def show_version():
 
     version_info = discpy.version_info
     entries.append(
-        "- discpy.py v{0.major}.{0.minor}.{0.micro}-{0.releaselevel}".format(
+        "- DiscPy v{0.major}.{0.minor}.{0.micro}-{0.releaselevel}".format(
             version_info
         )
     )
     if version_info.releaselevel != "final":
-        pkg = pkg_resources.get_distribution("discpy.py")
+        pkg = pkg_resources.get_distribution("DiscPy")
         if pkg:
-            entries.append(f"    - discpy.py pkg_resources: v{pkg.version}")
+            entries.append(f"    - DiscPy pkg_resources: v{pkg.version}")
 
     entries.append(f"- aiohttp v{aiohttp.__version__}")
     uname = platform.uname()
@@ -354,7 +354,7 @@ def add_newcog_args(subparser):
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        prog="discpy", description="Tools for helping with discpy.py"
+        prog="discpy", description="Tools for helping with DiscPy"
     )
     parser.add_argument(
         "-v", "--version", action="store_true", help="shows the library version"
