@@ -76,6 +76,7 @@ class AllowedMentions:
         Whether to mention the author of the message being replied to. Defaults
         to ``True``.
 
+        .. versionadded:: 1.6
     """
 
     __slots__ = ("everyone", "users", "roles", "replied_user")
@@ -97,6 +98,7 @@ class AllowedMentions:
     def all(cls: Type[A]) -> A:
         """A factory method that returns a :class:`AllowedMentions` with all fields explicitly set to ``True``
 
+        .. versionadded:: 1.5
         """
         return cls(everyone=True, users=True, roles=True, replied_user=True)
 
@@ -104,6 +106,7 @@ class AllowedMentions:
     def none(cls: Type[A]) -> A:
         """A factory method that returns a :class:`AllowedMentions` with all fields set to ``False``
 
+        .. versionadded:: 1.5
         """
         return cls(everyone=False, users=False, roles=False, replied_user=False)
 

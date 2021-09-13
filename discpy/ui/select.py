@@ -62,6 +62,7 @@ class Select(Item[V]):
 
     In order to get the selected items that the user has chosen, use :attr:`Select.values`.
 
+    .. versionadded:: 2.0
 
     Parameters
     ------------

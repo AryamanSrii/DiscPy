@@ -161,6 +161,7 @@ class Guild(Hashable):
     stickers: Tuple[:class:`GuildSticker`, ...]
         All stickers that the guild owns.
 
+        .. versionadded:: 2.0
     region: :class:`VoiceRegion`
         The region the guild belongs on. There is a chance that the region
         will be a :class:`str` if the value is not recognised by the enumerator.
@@ -189,6 +190,7 @@ class Guild(Hashable):
     max_video_channel_users: Optional[:class:`int`]
         The maximum amount of users in a video channel.
 
+        .. versionadded:: 1.4
     description: Optional[:class:`str`]
         The guild's description.
     mfa_level: :class:`int`
@@ -241,6 +243,7 @@ class Guild(Hashable):
     nsfw_level: :class:`NSFWLevel`
         The guild's NSFW level.
 
+        .. versionadded:: 2.0
     """
 
     __slots__ = (
@@ -529,6 +532,7 @@ class Guild(Hashable):
     def threads(self) -> List[Thread]:
         """List[:class:`Thread`]: A list of threads that you have permission to view.
 
+        .. versionadded:: 2.0
         """
         return list(self._threads.values())
 
@@ -560,6 +564,7 @@ class Guild(Hashable):
     def stage_channels(self) -> List[StageChannel]:
         """List[:class:`StageChannel`]: A list of stage channels that belongs to this guild.
 
+        .. versionadded:: 1.7
 
         This is sorted by the position and are in UI order from top to bottom.
         """
@@ -649,6 +654,7 @@ class Guild(Hashable):
     ) -> Optional[Union[Thread, GuildChannel]]:
         """Returns a channel or thread with the given ID.
 
+        .. versionadded:: 2.0
 
         Parameters
         -----------
@@ -684,6 +690,7 @@ class Guild(Hashable):
     def get_thread(self, thread_id: int, /) -> Optional[Thread]:
         """Returns a thread with the given ID.
 
+        .. versionadded:: 2.0
 
         Parameters
         -----------
@@ -718,6 +725,7 @@ class Guild(Hashable):
 
         If no channel is set, then this returns ``None``.
 
+        .. versionadded:: 1.3
         """
         channel_id = self._rules_channel_id
         return channel_id and self._channels.get(channel_id)  # type: ignore
@@ -730,6 +738,7 @@ class Guild(Hashable):
 
         If no channel is set, then this returns ``None``.
 
+        .. versionadded:: 1.4
         """
         channel_id = self._public_updates_channel_id
         return channel_id and self._channels.get(channel_id)  # type: ignore
@@ -744,6 +753,7 @@ class Guild(Hashable):
     def sticker_limit(self) -> int:
         """:class:`int`: The maximum number of sticker slots this guild has.
 
+        .. versionadded:: 2.0
         """
         more_stickers = 60 if "MORE_STICKERS" in self.features else 0
         return max(
@@ -824,6 +834,7 @@ class Guild(Hashable):
     def premium_subscriber_role(self) -> Optional[Role]:
         """Optional[:class:`Role`]: Gets the premium subscriber role, AKA "boost" role, in this guild.
 
+        .. versionadded:: 1.6
         """
         for role in self._roles.values():
             if role.is_premium_subscriber():
@@ -834,6 +845,7 @@ class Guild(Hashable):
     def self_role(self) -> Optional[Role]:
         """Optional[:class:`Role`]: Gets the role associated with this client's user, if any.
 
+        .. versionadded:: 1.6
         """
         self_id = self._state.self_id
         for role in self._roles.values():
@@ -847,12 +859,14 @@ class Guild(Hashable):
         """List[:class:`StageInstance`]: Returns a :class:`list` of the guild's stage instances that
         are currently running.
 
+        .. versionadded:: 2.0
         """
         return list(self._stage_instances.values())
 
     def get_stage_instance(self, stage_instance_id: int, /) -> Optional[StageInstance]:
         """Returns a stage instance with the given ID.
 
+        .. versionadded:: 2.0
 
         Parameters
         -----------
@@ -1190,9 +1204,11 @@ class Guild(Hashable):
             The region for the voice channel's voice communication.
             A value of ``None`` indicates automatic voice region detection.
 
+            .. versionadded:: 1.7
         video_quality_mode: :class:`VideoQualityMode`
             The camera video quality for the voice channel's participants.
 
+            .. versionadded:: 2.0
         reason: Optional[:class:`str`]
             The reason for creating this channel. Shows up on the audit log.
 
@@ -1254,6 +1270,7 @@ class Guild(Hashable):
 
         This is similar to :meth:`create_text_channel` except makes a :class:`StageChannel` instead.
 
+        .. versionadded:: 1.7
 
         Parameters
         -----------
@@ -1652,6 +1669,7 @@ class Guild(Hashable):
 
             This method is an API call. For general usage, consider :attr:`channels` instead.
 
+        .. versionadded:: 1.2
 
         Raises
         -------
@@ -1686,6 +1704,7 @@ class Guild(Hashable):
 
         This includes both private and public threads.
 
+        .. versionadded:: 2.0
 
         Raises
         ------
@@ -1721,6 +1740,7 @@ class Guild(Hashable):
 
             This method is an API call. For general usage, consider :attr:`members` instead.
 
+        .. versionadded:: 1.3
 
         All parameters are optional.
 
@@ -1835,6 +1855,7 @@ class Guild(Hashable):
 
             This method is an API call. For general usage, consider :meth:`get_channel_or_thread` instead.
 
+        .. versionadded:: 2.0
 
         Raises
         -------
@@ -1982,6 +2003,7 @@ class Guild(Hashable):
 
         Requires :attr:`~.Permissions.manage_guild` permissions.
 
+        .. versionadded:: 1.7
 
         Raises
         -------
@@ -2038,6 +2060,7 @@ class Guild(Hashable):
             A list of :class:`abc.Snowflake` that represent roles to include in the estimate. If a member
             has a role that is not specified, they'll be excluded.
 
+            .. versionadded:: 1.7
 
         Raises
         -------
@@ -2108,6 +2131,7 @@ class Guild(Hashable):
         You must have the :attr:`~Permissions.manage_guild` permission to
         do this.
 
+        .. versionadded:: 1.7
 
         Parameters
         -----------
@@ -2135,6 +2159,7 @@ class Guild(Hashable):
         You must have the :attr:`~Permissions.manage_guild` permission to
         do this.
 
+        .. versionadded:: 1.4
 
         Parameters
         -----------
@@ -2160,6 +2185,7 @@ class Guild(Hashable):
         You must have the :attr:`~Permissions.manage_guild` permission to
         do this.
 
+        .. versionadded:: 1.4
 
         Raises
         -------
@@ -2192,6 +2218,7 @@ class Guild(Hashable):
 
         Retrieves a list of all :class:`Sticker`\s for the guild.
 
+        .. versionadded:: 2.0
 
         .. note::
 
@@ -2215,6 +2242,7 @@ class Guild(Hashable):
 
         Retrieves a custom :class:`Sticker` from the guild.
 
+        .. versionadded:: 2.0
 
         .. note::
 
@@ -2257,6 +2285,7 @@ class Guild(Hashable):
         You must have :attr:`~Permissions.manage_emojis_and_stickers` permission to
         do this.
 
+        .. versionadded:: 2.0
 
         Parameters
         -----------
@@ -2314,6 +2343,7 @@ class Guild(Hashable):
         You must have :attr:`~Permissions.manage_emojis_and_stickers` permission to
         do this.
 
+        .. versionadded:: 2.0
 
         Parameters
         -----------
@@ -2473,6 +2503,7 @@ class Guild(Hashable):
 
             This method is an API call. For general usage, consider :attr:`roles` instead.
 
+        .. versionadded:: 1.3
 
         Raises
         -------
@@ -2605,6 +2636,7 @@ class Guild(Hashable):
         You must have the :attr:`~Permissions.manage_roles` permission to
         do this.
 
+        .. versionadded:: 1.4
 
         Example:
 
@@ -2907,6 +2939,7 @@ class Guild(Hashable):
         You must have the :attr:`~Permissions.manage_guild` permission to
         use this
 
+        .. versionadded:: 2.0
 
         Parameters
         -----------
@@ -2938,6 +2971,7 @@ class Guild(Hashable):
 
         This is a websocket operation and can be slow.
 
+        .. versionadded:: 1.5
 
         Parameters
         -----------
@@ -2972,6 +3006,7 @@ class Guild(Hashable):
 
         This is a websocket operation and can be slow.
 
+        .. versionadded:: 1.3
 
         Parameters
         -----------
@@ -2984,6 +3019,7 @@ class Guild(Hashable):
             Whether to request for presences to be provided. This defaults
             to ``False``.
 
+            .. versionadded:: 1.6
 
         cache: :class:`bool`
             Whether to cache the members internally. This makes operations
@@ -2991,6 +3027,7 @@ class Guild(Hashable):
         user_ids: Optional[List[:class:`int`]]
             List of user IDs to search for. If the user ID is not in the guild then it won't be returned.
 
+            .. versionadded:: 1.4
 
 
         Raises
@@ -3045,6 +3082,7 @@ class Guild(Hashable):
 
         Changes client's voice state in the guild.
 
+        .. versionadded:: 1.4
 
         Parameters
         -----------

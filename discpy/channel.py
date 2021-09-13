@@ -154,6 +154,7 @@ class TextChannel(discpy.abc.Messageable, discpy.abc.GuildChannel, Hashable):
     default_auto_archive_duration: :class:`int`
         The default auto archive duration in minutes for threads created in this channel.
 
+        .. versionadded:: 2.0
     """
 
     __slots__ = (
@@ -240,6 +241,7 @@ class TextChannel(discpy.abc.Messageable, discpy.abc.GuildChannel, Hashable):
     def threads(self) -> List[Thread]:
         """List[:class:`Thread`]: Returns all the threads that you can see.
 
+        .. versionadded:: 2.0
         """
         return [
             thread
@@ -637,6 +639,7 @@ class TextChannel(discpy.abc.Messageable, discpy.abc.GuildChannel, Hashable):
             The webhook returned will not provide a token to do webhook
             actions, as Discord does not provide it.
 
+        .. versionadded:: 1.3
 
         Parameters
         -----------
@@ -645,6 +648,7 @@ class TextChannel(discpy.abc.Messageable, discpy.abc.GuildChannel, Hashable):
         reason: Optional[:class:`str`]
             The reason for following the channel. Shows up on the destination guild's audit log.
 
+            .. versionadded:: 1.4
 
         Raises
         -------
@@ -680,6 +684,7 @@ class TextChannel(discpy.abc.Messageable, discpy.abc.GuildChannel, Hashable):
         This is useful if you want to work with a message and only have its ID without
         doing an unnecessary API call.
 
+        .. versionadded:: 1.6
 
         Parameters
         ------------
@@ -699,6 +704,7 @@ class TextChannel(discpy.abc.Messageable, discpy.abc.GuildChannel, Hashable):
     def get_thread(self, thread_id: int, /) -> Optional[Thread]:
         """Returns a thread with the given ID.
 
+        .. versionadded:: 2.0
 
         Parameters
         -----------
@@ -728,6 +734,7 @@ class TextChannel(discpy.abc.Messageable, discpy.abc.GuildChannel, Hashable):
         To create a public thread, you must have :attr:`~discpy.Permissions.create_public_threads`.
         For a private thread, :attr:`~discpy.Permissions.create_private_threads` is needed instead.
 
+        .. versionadded:: 2.0
 
         Parameters
         -----------
@@ -797,6 +804,7 @@ class TextChannel(discpy.abc.Messageable, discpy.abc.GuildChannel, Hashable):
         You must have :attr:`~Permissions.read_message_history` to use this. If iterating over private threads
         then :attr:`~Permissions.manage_threads` is also required.
 
+        .. versionadded:: 2.0
 
         Parameters
         -----------
@@ -903,6 +911,7 @@ class VocalGuildChannel(discpy.abc.Connectable, discpy.abc.GuildChannel, Hashabl
     def voice_states(self) -> Dict[int, VoiceState]:
         """Returns a mapping of member IDs who have voice states in this channel.
 
+        .. versionadded:: 1.3
 
         .. note::
 
@@ -977,9 +986,11 @@ class VoiceChannel(VocalGuildChannel):
         The region for the voice channel's voice communication.
         A value of ``None`` indicates automatic voice region detection.
 
+        .. versionadded:: 1.7
     video_quality_mode: :class:`VideoQualityMode`
         The camera video quality for the voice channel's participants.
 
+        .. versionadded:: 2.0
     """
 
     __slots__ = ()
@@ -1073,9 +1084,11 @@ class VoiceChannel(VocalGuildChannel):
             The new region for the voice channel's voice communication.
             A value of ``None`` indicates automatic voice region detection.
 
+            .. versionadded:: 1.7
         video_quality_mode: :class:`VideoQualityMode`
             The camera video quality for the voice channel's participants.
 
+            .. versionadded:: 2.0
 
         Raises
         ------
@@ -1102,6 +1115,7 @@ class VoiceChannel(VocalGuildChannel):
 class StageChannel(VocalGuildChannel):
     """Represents a Discord guild stage channel.
 
+    .. versionadded:: 1.7
 
     .. container:: operations
 
@@ -1146,6 +1160,7 @@ class StageChannel(VocalGuildChannel):
     video_quality_mode: :class:`VideoQualityMode`
         The camera video quality for the stage channel's participants.
 
+        .. versionadded:: 2.0
     """
 
     __slots__ = ("topic",)
@@ -1182,6 +1197,7 @@ class StageChannel(VocalGuildChannel):
     def speakers(self) -> List[Member]:
         """List[:class:`Member`]: A list of members who have been permitted to speak in the stage channel.
 
+        .. versionadded:: 2.0
         """
         return [
             member
@@ -1195,6 +1211,7 @@ class StageChannel(VocalGuildChannel):
     def listeners(self) -> List[Member]:
         """List[:class:`Member`]: A list of members who are listening in the stage channel.
 
+        .. versionadded:: 2.0
         """
         return [
             member for member in self.members if member.voice and member.voice.suppress
@@ -1204,6 +1221,7 @@ class StageChannel(VocalGuildChannel):
     def moderators(self) -> List[Member]:
         """List[:class:`Member`]: A list of members who are moderating the stage channel.
 
+        .. versionadded:: 2.0
         """
         required_permissions = Permissions.stage_moderator()
         return [
@@ -1227,6 +1245,7 @@ class StageChannel(VocalGuildChannel):
     def instance(self) -> Optional[StageInstance]:
         """Optional[:class:`StageInstance`]: The running stage instance of the stage channel.
 
+        .. versionadded:: 2.0
         """
         return utils.get(self.guild.stage_instances, channel_id=self.id)
 
@@ -1244,6 +1263,7 @@ class StageChannel(VocalGuildChannel):
         You must have the :attr:`~Permissions.manage_channels` permission to
         use this.
 
+        .. versionadded:: 2.0
 
         Parameters
         -----------
@@ -1287,6 +1307,7 @@ class StageChannel(VocalGuildChannel):
 
         Gets the running :class:`StageInstance`.
 
+        .. versionadded:: 2.0
 
         Raises
         -------
@@ -1360,6 +1381,7 @@ class StageChannel(VocalGuildChannel):
         video_quality_mode: :class:`VideoQualityMode`
             The camera video quality for the stage channel's participants.
 
+            .. versionadded:: 2.0
 
         Raises
         ------
@@ -1583,6 +1605,7 @@ class CategoryChannel(discpy.abc.GuildChannel, Hashable):
     def stage_channels(self) -> List[StageChannel]:
         """List[:class:`StageChannel`]: Returns the stage channels that are under this category.
 
+        .. versionadded:: 1.7
         """
         ret = [
             c
@@ -1621,6 +1644,7 @@ class CategoryChannel(discpy.abc.GuildChannel, Hashable):
 
         A shortcut method to :meth:`Guild.create_stage_channel` to create a :class:`StageChannel` in the category.
 
+        .. versionadded:: 1.7
 
         Returns
         -------
@@ -1778,6 +1802,7 @@ class StoreChannel(discpy.abc.GuildChannel, Hashable):
             A :class:`Mapping` of target (either a role or a member) to
             :class:`PermissionOverwrite` to apply to the channel.
 
+            .. versionadded:: 1.3
 
         Raises
         ------
@@ -1915,6 +1940,7 @@ class DMChannel(discpy.abc.Messageable, Hashable):
         This is useful if you want to work with a message and only have its ID without
         doing an unnecessary API call.
 
+        .. versionadded:: 1.6
 
         Parameters
         ------------
@@ -1966,6 +1992,7 @@ class GroupChannel(discpy.abc.Messageable, Hashable):
     owner_id: :class:`int`
         The owner ID that owns the group channel.
 
+        .. versionadded:: 2.0
     name: Optional[:class:`str`]
         The group channel's name if provided.
     """
@@ -2095,6 +2122,7 @@ class PartialMessageable(discpy.abc.Messageable, Hashable):
 
     Note that this class is trimmed down and has no rich attributes.
 
+    .. versionadded:: 2.0
 
     .. container:: operations
 

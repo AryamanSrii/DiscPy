@@ -86,6 +86,7 @@ class Interaction:
     An interaction happens when a user does an action that needs to
     be notified. Current examples are slash commands and components.
 
+    .. versionadded:: 2.0
 
     Attributes
     -----------
@@ -382,6 +383,7 @@ class InteractionResponse:
 
     This type can be accessed through :attr:`Interaction.response`.
 
+    .. versionadded:: 2.0
     """
 
     __slots__: Tuple[str, ...] = (
@@ -688,6 +690,7 @@ class InteractionMessage(Message):
     This inherits from :class:`discpy.Message` with changes to
     :meth:`edit` and :meth:`delete` to work.
 
+    .. versionadded:: 2.0
     """
 
     __slots__ = ()

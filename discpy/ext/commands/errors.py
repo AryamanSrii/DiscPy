@@ -216,6 +216,7 @@ class CheckAnyFailure(CheckFailure):
 
     This inherits from :exc:`CheckFailure`.
 
+    .. versionadded:: 1.3
 
     Attributes
     ------------
@@ -272,6 +273,7 @@ class ObjectNotFound(BadArgument):
 
     This inherits from :exc:`BadArgument`
 
+    .. versionadded:: 2.0
 
     Attributes
     -----------
@@ -290,6 +292,7 @@ class MemberNotFound(BadArgument):
 
     This inherits from :exc:`BadArgument`
 
+    .. versionadded:: 1.5
 
     Attributes
     -----------
@@ -307,6 +310,7 @@ class GuildNotFound(BadArgument):
 
     This inherits from :exc:`BadArgument`
 
+    .. versionadded:: 1.7
 
     Attributes
     -----------
@@ -325,6 +329,7 @@ class UserNotFound(BadArgument):
 
     This inherits from :exc:`BadArgument`
 
+    .. versionadded:: 1.5
 
     Attributes
     -----------
@@ -342,6 +347,7 @@ class MessageNotFound(BadArgument):
 
     This inherits from :exc:`BadArgument`
 
+    .. versionadded:: 1.5
 
     Attributes
     -----------
@@ -360,6 +366,7 @@ class ChannelNotReadable(BadArgument):
 
     This inherits from :exc:`BadArgument`
 
+    .. versionadded:: 1.5
 
     Attributes
     -----------
@@ -377,6 +384,7 @@ class ChannelNotFound(BadArgument):
 
     This inherits from :exc:`BadArgument`
 
+    .. versionadded:: 1.5
 
     Attributes
     -----------
@@ -394,6 +402,7 @@ class ThreadNotFound(BadArgument):
 
     This inherits from :exc:`BadArgument`
 
+    .. versionadded:: 2.0
 
     Attributes
     -----------
@@ -411,6 +420,7 @@ class BadColourArgument(BadArgument):
 
     This inherits from :exc:`BadArgument`
 
+    .. versionadded:: 1.5
 
     Attributes
     -----------
@@ -431,6 +441,7 @@ class RoleNotFound(BadArgument):
 
     This inherits from :exc:`BadArgument`
 
+    .. versionadded:: 1.5
 
     Attributes
     -----------
@@ -448,6 +459,7 @@ class BadInviteArgument(BadArgument):
 
     This inherits from :exc:`BadArgument`
 
+    .. versionadded:: 1.5
     """
 
     def __init__(self, argument: str) -> None:
@@ -460,6 +472,7 @@ class EmojiNotFound(BadArgument):
 
     This inherits from :exc:`BadArgument`
 
+    .. versionadded:: 1.5
 
     Attributes
     -----------
@@ -478,6 +491,7 @@ class PartialEmojiConversionFailure(BadArgument):
 
     This inherits from :exc:`BadArgument`
 
+    .. versionadded:: 1.5
 
     Attributes
     -----------
@@ -495,6 +509,7 @@ class GuildStickerNotFound(BadArgument):
 
     This inherits from :exc:`BadArgument`
 
+    .. versionadded:: 2.0
 
     Attributes
     -----------
@@ -512,6 +527,7 @@ class BadBoolArgument(BadArgument):
 
     This inherits from :exc:`BadArgument`
 
+    .. versionadded:: 1.5
 
     Attributes
     -----------
@@ -605,6 +621,7 @@ class MissingRole(CheckFailure):
 
     This inherits from :exc:`CheckFailure`
 
+    .. versionadded:: 1.1
 
     Attributes
     -----------
@@ -624,6 +641,7 @@ class BotMissingRole(CheckFailure):
 
     This inherits from :exc:`CheckFailure`
 
+    .. versionadded:: 1.1
 
     Attributes
     -----------
@@ -644,6 +662,7 @@ class MissingAnyRole(CheckFailure):
 
     This inherits from :exc:`CheckFailure`
 
+    .. versionadded:: 1.1
 
     Attributes
     -----------
@@ -672,6 +691,7 @@ class BotMissingAnyRole(CheckFailure):
 
     This inherits from :exc:`CheckFailure`
 
+    .. versionadded:: 1.1
 
     Attributes
     -----------
@@ -700,6 +720,7 @@ class NSFWChannelRequired(CheckFailure):
 
     This inherits from :exc:`CheckFailure`.
 
+    .. versionadded:: 1.1
 
     Parameters
     -----------
@@ -816,6 +837,7 @@ class BadLiteralArgument(UserInputError):
 
     This inherits from :exc:`UserInputError`
 
+    .. versionadded:: 2.0
 
     Attributes
     -----------
@@ -1002,6 +1024,7 @@ class CommandRegistrationError(ClientException):
 
     This inherits from :exc:`discpy.ClientException`
 
+    .. versionadded:: 1.4
 
     Attributes
     ----------
@@ -1023,6 +1046,7 @@ class FlagError(BadArgument):
 
     This inherits from :exc:`BadArgument`.
 
+    .. versionadded:: 2.0
     """
 
     pass
@@ -1033,6 +1057,7 @@ class TooManyFlags(FlagError):
 
     This inherits from :exc:`FlagError`.
 
+    .. versionadded:: 2.0
 
     Attributes
     ------------
@@ -1055,6 +1080,7 @@ class BadFlagArgument(FlagError):
 
     This inherits from :exc:`FlagError`
 
+    .. versionadded:: 2.0
 
     Attributes
     -----------
@@ -1077,6 +1103,7 @@ class MissingRequiredFlag(FlagError):
 
     This inherits from :exc:`FlagError`
 
+    .. versionadded:: 2.0
 
     Attributes
     -----------
@@ -1094,6 +1121,7 @@ class MissingFlagArgument(FlagError):
 
     This inherits from :exc:`FlagError`
 
+    .. versionadded:: 2.0
 
     Attributes
     -----------

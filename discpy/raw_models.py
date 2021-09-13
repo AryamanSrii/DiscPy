@@ -124,9 +124,11 @@ class RawMessageUpdateEvent(_RawReprMixin):
     channel_id: :class:`int`
         The channel ID where the update took place.
 
+        .. versionadded:: 1.3
     guild_id: Optional[:class:`int`]
         The guild ID where the message got updated, if applicable.
 
+        .. versionadded:: 1.7
 
     data: :class:`dict`
         The raw data given by the `gateway <https://discord.com/developers/docs/topics/gateway#message-update>`_
@@ -168,12 +170,14 @@ class RawReactionActionEvent(_RawReprMixin):
     member: Optional[:class:`Member`]
         The member who added the reaction. Only available if `event_type` is `REACTION_ADD` and the reaction is inside a guild.
 
+        .. versionadded:: 1.3
 
     event_type: :class:`str`
         The event type that triggered this action. Can be
         ``REACTION_ADD`` for reaction addition or
         ``REACTION_REMOVE`` for reaction removal.
 
+        .. versionadded:: 1.3
     """
 
     __slots__ = (
@@ -230,6 +234,7 @@ class RawReactionClearEvent(_RawReprMixin):
 class RawReactionClearEmojiEvent(_RawReprMixin):
     """Represents the payload for a :func:`on_raw_reaction_clear_emoji` event.
 
+    .. versionadded:: 1.3
 
     Attributes
     -----------
@@ -259,6 +264,7 @@ class RawReactionClearEmojiEvent(_RawReprMixin):
 class RawIntegrationDeleteEvent(_RawReprMixin):
     """Represents the payload for a :func:`on_raw_integration_delete` event.
 
+    .. versionadded:: 2.0
 
     Attributes
     -----------

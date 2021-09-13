@@ -175,6 +175,7 @@ class DiscordServerError(HTTPException):
 
     Subclass of :exc:`HTTPException`.
 
+    .. versionadded:: 1.5
     """
 
     pass
@@ -272,6 +273,7 @@ class InteractionResponded(ClientException):
 
     An interaction can only respond once.
 
+    .. versionadded:: 2.0
 
     Attributes
     -----------

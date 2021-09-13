@@ -150,6 +150,7 @@ class ObjectConverter(IDConverter[discpy.Object]):
 
     The argument must follow the valid ID or mention formats (e.g. `<@80088516616269824>`).
 
+    .. versionadded:: 2.0
 
     The lookup strategy is as follows (in order):
 
@@ -331,6 +332,7 @@ class UserConverter(IDConverter[discpy.User]):
 class PartialMessageConverter(Converter[discpy.PartialMessage]):
     """Converts to a :class:`discpy.PartialMessage`.
 
+    .. versionadded:: 1.7
 
     The creation strategy is as follows (in order):
 
@@ -388,6 +390,7 @@ class PartialMessageConverter(Converter[discpy.PartialMessage]):
 class MessageConverter(IDConverter[discpy.Message]):
     """Converts to a :class:`discpy.Message`.
 
+    .. versionadded:: 1.1
 
     The lookup strategy is as follows (in order):
 
@@ -429,6 +432,7 @@ class GuildChannelConverter(IDConverter[discpy.abc.GuildChannel]):
     2. Lookup by mention.
     3. Lookup by name.
 
+    .. versionadded:: 2.0
     """
 
     async def convert(self, ctx: Context, argument: str) -> discpy.abc.GuildChannel:
@@ -544,6 +548,7 @@ class VoiceChannelConverter(IDConverter[discpy.VoiceChannel]):
 class StageChannelConverter(IDConverter[discpy.StageChannel]):
     """Converts to a :class:`~discpy.StageChannel`.
 
+    .. versionadded:: 1.7
 
     All lookups are via the local guild. If in a DM context, then the lookup
     is done by the global cache.
@@ -595,6 +600,7 @@ class StoreChannelConverter(IDConverter[discpy.StoreChannel]):
     2. Lookup by mention.
     3. Lookup by name.
 
+    .. versionadded:: 1.7
     """
 
     async def convert(self, ctx: Context, argument: str) -> discpy.StoreChannel:
@@ -614,6 +620,7 @@ class ThreadConverter(IDConverter[discpy.Thread]):
     2. Lookup by mention.
     3. Lookup by name.
 
+    .. versionadded: 2.0
     """
 
     async def convert(self, ctx: Context, argument: str) -> discpy.Thread:
@@ -776,6 +783,7 @@ class GuildConverter(IDConverter[discpy.Guild]):
     1. Lookup by ID.
     2. Lookup by name. (There is no disambiguation for Guilds with multiple matching names).
 
+    .. versionadded:: 1.7
     """
 
     async def convert(self, ctx: Context, argument: str) -> discpy.Guild:
@@ -875,6 +883,7 @@ class GuildStickerConverter(IDConverter[discpy.GuildSticker]):
     1. Lookup by ID.
     3. Lookup by name
 
+    .. versionadded:: 2.0
     """
 
     async def convert(self, ctx: Context, argument: str) -> discpy.GuildSticker:
@@ -919,6 +928,7 @@ class clean_content(Converter[str]):
     remove_markdown: :class:`bool`
         Whether to also remove special markdown characters. This option is not supported with ``escape_markdown``
 
+        .. versionadded:: 1.7
     """
 
     def __init__(
@@ -1155,6 +1165,7 @@ async def run_converters(
 
     This function does the same work that the library does under the hood.
 
+    .. versionadded:: 2.0
 
     Parameters
     ------------

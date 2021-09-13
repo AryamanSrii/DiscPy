@@ -439,6 +439,7 @@ class VoiceClient(VoiceProtocol):
         This could be referred to as the Discord Voice WebSocket latency and is
         an analogue of user's voice latencies as seen in the Discord client.
 
+        .. versionadded:: 1.4
         """
         ws = self.ws
         return float("inf") if not ws else ws.latency
@@ -447,6 +448,7 @@ class VoiceClient(VoiceProtocol):
     def average_latency(self) -> float:
         """:class:`float`: Average of most recent 20 HEARTBEAT latencies in seconds.
 
+        .. versionadded:: 1.4
         """
         ws = self.ws
         return float("inf") if not ws else ws.average_latency

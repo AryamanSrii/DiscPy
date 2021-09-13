@@ -263,6 +263,7 @@ Enums
 
         The role bucket operates on a per-role basis.
 
+        .. versionadded:: 1.3
 
 
 .. _ext_commands_api_checks:

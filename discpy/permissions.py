@@ -216,6 +216,7 @@ class Permissions(BaseFlags):
         """A factory method that creates a :class:`Permissions` with all
         "Membership" permissions from the official Discord UI set to ``True``.
 
+        .. versionadded:: 1.7
         """
         return cls(0b00001100000000000000000000000111)
 
@@ -245,6 +246,7 @@ class Permissions(BaseFlags):
         """A factory method that creates a :class:`Permissions` with all
         "Stage Channel" permissions from the official Discord UI set to ``True``.
 
+        .. versionadded:: 1.7
         """
         return cls(1 << 32)
 
@@ -253,6 +255,7 @@ class Permissions(BaseFlags):
         """A factory method that creates a :class:`Permissions` with all
         "Stage Moderator" permissions from the official Discord UI set to ``True``.
 
+        .. versionadded:: 1.7
         """
         return cls(0b100000001010000000000000000000000)
 
@@ -261,6 +264,7 @@ class Permissions(BaseFlags):
         """A factory method that creates a :class:`Permissions` with all
         "Advanced" permissions from the official Discord UI set to ``True``.
 
+        .. versionadded:: 1.7
         """
         return cls(1 << 3)
 
@@ -359,6 +363,7 @@ class Permissions(BaseFlags):
     def view_channel(self) -> int:
         """:class:`bool`: An alias for :attr:`read_messages`.
 
+        .. versionadded:: 1.3
         """
         return 1 << 10
 
@@ -411,6 +416,7 @@ class Permissions(BaseFlags):
     def use_external_emojis(self) -> int:
         """:class:`bool`: An alias for :attr:`external_emojis`.
 
+        .. versionadded:: 1.3
         """
         return 1 << 18
 
@@ -418,6 +424,7 @@ class Permissions(BaseFlags):
     def view_guild_insights(self) -> int:
         """:class:`bool`: Returns ``True`` if a user can view the guild's insights.
 
+        .. versionadded:: 1.3
         """
         return 1 << 19
 
@@ -473,6 +480,7 @@ class Permissions(BaseFlags):
     def manage_permissions(self) -> int:
         """:class:`bool`: An alias for :attr:`manage_roles`.
 
+        .. versionadded:: 1.3
         """
         return 1 << 28
 
@@ -490,6 +498,7 @@ class Permissions(BaseFlags):
     def manage_emojis_and_stickers(self) -> int:
         """:class:`bool`: An alias for :attr:`manage_emojis`.
 
+        .. versionadded:: 2.0
         """
         return 1 << 30
 
@@ -497,6 +506,7 @@ class Permissions(BaseFlags):
     def use_slash_commands(self) -> int:
         """:class:`bool`: Returns ``True`` if a user can use slash commands.
 
+        .. versionadded:: 1.7
         """
         return 1 << 31
 
@@ -504,6 +514,7 @@ class Permissions(BaseFlags):
     def request_to_speak(self) -> int:
         """:class:`bool`: Returns ``True`` if a user can request to speak in a stage channel.
 
+        .. versionadded:: 1.7
         """
         return 1 << 32
 
@@ -511,6 +522,7 @@ class Permissions(BaseFlags):
     def manage_events(self) -> int:
         """:class:`bool`: Returns ``True`` if a user can manage guild events.
 
+        .. versionadded:: 2.0
         """
         return 1 << 33
 
@@ -518,6 +530,7 @@ class Permissions(BaseFlags):
     def manage_threads(self) -> int:
         """:class:`bool`: Returns ``True`` if a user can manage threads.
 
+        .. versionadded:: 2.0
         """
         return 1 << 34
 
@@ -525,6 +538,7 @@ class Permissions(BaseFlags):
     def create_public_threads(self) -> int:
         """:class:`bool`: Returns ``True`` if a user can create public threads.
 
+        .. versionadded:: 2.0
         """
         return 1 << 35
 
@@ -532,6 +546,7 @@ class Permissions(BaseFlags):
     def create_private_threads(self) -> int:
         """:class:`bool`: Returns ``True`` if a user can create private threads.
 
+        .. versionadded:: 2.0
         """
         return 1 << 36
 
@@ -539,6 +554,7 @@ class Permissions(BaseFlags):
     def external_stickers(self) -> int:
         """:class:`bool`: Returns ``True`` if a user can use stickers from other guilds.
 
+        .. versionadded:: 2.0
         """
         return 1 << 37
 
@@ -546,6 +562,7 @@ class Permissions(BaseFlags):
     def use_external_stickers(self) -> int:
         """:class:`bool`: An alias for :attr:`external_stickers`.
 
+        .. versionadded:: 2.0
         """
         return 1 << 37
 
@@ -553,6 +570,7 @@ class Permissions(BaseFlags):
     def send_messages_in_threads(self) -> int:
         """:class:`bool`: Returns ``True`` if a user can send messages in threads.
 
+        .. versionadded:: 2.0
         """
         return 1 << 38
 

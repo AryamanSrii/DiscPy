@@ -559,6 +559,7 @@ class BotBase(GroupMixin):
             If a previously loaded cog with the same name should be ejected
             instead of raising an error.
 
+            .. versionadded:: 2.0
 
         Raises
         -------
@@ -739,6 +740,7 @@ class BotBase(GroupMixin):
             This is required when loading an extension using a relative path, e.g ``.foo.test``.
             Defaults to ``None``.
 
+            .. versionadded:: 1.7
 
         Raises
         --------
@@ -786,6 +788,7 @@ class BotBase(GroupMixin):
             This is required when unloading an extension using a relative path, e.g ``.foo.test``.
             Defaults to ``None``.
 
+            .. versionadded:: 1.7
 
         Raises
         -------
@@ -823,6 +826,7 @@ class BotBase(GroupMixin):
             This is required when reloading an extension using a relative path, e.g ``.foo.test``.
             Defaults to ``None``.
 
+            .. versionadded:: 1.7
 
         Raises
         -------
@@ -1135,11 +1139,13 @@ class Bot(BotBase, discpy.Client):
         For performance reasons it is recommended to use a :class:`set`
         for the collection. You cannot set both ``owner_id`` and ``owner_ids``.
 
+        .. versionadded:: 1.3
     strip_after_prefix: :class:`bool`
         Whether to strip whitespace characters after encountering the command
         prefix. This allows for ``!   hello`` and ``!hello`` to both work if
         the ``command_prefix`` is set to ``!``. Defaults to ``False``.
 
+        .. versionadded:: 1.7
     """
 
     pass

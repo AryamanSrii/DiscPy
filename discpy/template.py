@@ -89,6 +89,7 @@ class _PartialTemplateState:
 class Template:
     """Represents a Discord template.
 
+    .. versionadded:: 1.4
 
     Attributes
     -----------
@@ -112,6 +113,7 @@ class Template:
     is_dirty: Optional[:class:`bool`]
         Whether the template has unsynced changes.
 
+        .. versionadded:: 2.0
     """
 
     __slots__ = (
@@ -221,6 +223,7 @@ class Template:
         You must have the :attr:`~Permissions.manage_guild` permission in the
         source guild to do this.
 
+        .. versionadded:: 1.7
 
         .. versionchanged:: 2.0
             The template is no longer edited in-place, instead it is returned.
@@ -256,6 +259,7 @@ class Template:
         You must have the :attr:`~Permissions.manage_guild` permission in the
         source guild to do this.
 
+        .. versionadded:: 1.7
 
         .. versionchanged:: 2.0
             The template is no longer edited in-place, instead it is returned.
@@ -301,6 +305,7 @@ class Template:
         You must have the :attr:`~Permissions.manage_guild` permission in the
         source guild to do this.
 
+        .. versionadded:: 1.7
 
         Raises
         -------
@@ -317,5 +322,6 @@ class Template:
     def url(self) -> str:
         """:class:`str`: The template url.
 
+        .. versionadded:: 2.0
         """
         return f"https://discord.new/{self.code}"

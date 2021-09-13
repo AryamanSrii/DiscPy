@@ -98,6 +98,7 @@ class VoiceState:
     self_stream: :class:`bool`
         Indicates if the user is currently streaming via 'Go Live' feature.
 
+        .. versionadded:: 1.3
 
     self_video: :class:`bool`
         Indicates if the user is currently broadcasting video.
@@ -106,6 +107,7 @@ class VoiceState:
 
         Only applies to stage channels.
 
+        .. versionadded:: 1.7
 
     requested_to_speak_at: Optional[:class:`datetime.datetime`]
         An aware datetime object that specifies the date and time in UTC that the member
@@ -114,6 +116,7 @@ class VoiceState:
 
         Only applicable to stage channels.
 
+        .. versionadded:: 1.7
 
     afk: :class:`bool`
         Indicates if the user is currently in the AFK channel in the guild.
@@ -265,6 +268,7 @@ class Member(discpy.abc.Messageable, _UserTag):
     pending: :class:`bool`
         Whether the member is pending member verification.
 
+        .. versionadded:: 1.6
     premium_since: Optional[:class:`datetime.datetime`]
         An aware datetime object that specifies the date and time in UTC when the member used their
         "Nitro boost" on the guild, if available. This could be ``None``.
@@ -447,6 +451,7 @@ class Member(discpy.abc.Messageable, _UserTag):
     def raw_status(self) -> str:
         """:class:`str`: The member's overall status as a string value.
 
+        .. versionadded:: 1.5
         """
         return self._client_status[None]
 
@@ -546,6 +551,7 @@ class Member(discpy.abc.Messageable, _UserTag):
         if they have a guild specific avatar then that
         is returned instead.
 
+        .. versionadded:: 2.0
         """
         return self.guild_avatar or self._user.avatar or self._user.default_avatar
 
@@ -554,6 +560,7 @@ class Member(discpy.abc.Messageable, _UserTag):
         """Optional[:class:`Asset`]: Returns an :class:`Asset` for the guild avatar
         the member has. If unavailable, ``None`` is returned.
 
+        .. versionadded:: 2.0
         """
         if self._avatar is None:
             return None
@@ -721,6 +728,7 @@ class Member(discpy.abc.Messageable, _UserTag):
         suppress: :class:`bool`
             Indicates if the member should be suppressed in stage channels.
 
+            .. versionadded:: 1.7
 
         roles: List[:class:`Role`]
             The member's new list of roles. This *replaces* the roles.
@@ -801,6 +809,7 @@ class Member(discpy.abc.Messageable, _UserTag):
             Requesting members that are not the client is equivalent
             to :attr:`.edit` providing ``suppress`` as ``False``.
 
+        .. versionadded:: 1.7
 
         Raises
         -------
@@ -938,6 +947,7 @@ class Member(discpy.abc.Messageable, _UserTag):
     def get_role(self, role_id: int, /) -> Optional[Role]:
         """Returns a role with the given ID from roles which the member has.
 
+        .. versionadded:: 2.0
 
         Parameters
         -----------
