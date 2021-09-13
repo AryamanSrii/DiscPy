@@ -271,7 +271,6 @@ class Command(_BaseCommand, Generic[CogT, P, T]):
         If ``True`` and a variadic positional argument is specified, requires
         the user to specify at least one argument. Defaults to ``False``.
 
-        .. versionadded:: 1.5
 
     ignore_extra: :class:`bool`
         If ``True``\, ignores extraneous strings passed to a command if all its
@@ -289,7 +288,6 @@ class Command(_BaseCommand, Generic[CogT, P, T]):
             This object may be copied by the library.
 
 
-        .. versionadded:: 2.0
     """
     __original_kwargs__: Dict[str, Any]
 
@@ -440,7 +438,6 @@ class Command(_BaseCommand, Generic[CogT, P, T]):
 
         This is the non-decorator interface to :func:`.check`.
 
-        .. versionadded:: 1.3
 
         Parameters
         -----------
@@ -456,7 +453,6 @@ class Command(_BaseCommand, Generic[CogT, P, T]):
         This function is idempotent and will not raise an exception
         if the function is not in the command's checks.
 
-        .. versionadded:: 1.3
 
         Parameters
         -----------
@@ -489,7 +485,6 @@ class Command(_BaseCommand, Generic[CogT, P, T]):
             invoke hooks, cooldowns, etc. You must take care to pass
             the proper arguments and types to this function.
 
-        .. versionadded:: 1.3
         """
         if self.cog is not None:
             return await self.callback(self.cog, context, *args, **kwargs)  # type: ignore
@@ -697,7 +692,6 @@ class Command(_BaseCommand, Generic[CogT, P, T]):
 
         For example in commands ``?a b c test``, the parents are ``[c, b, a]``.
 
-        .. versionadded:: 1.1
         """
         entries = []
         command = self
@@ -909,7 +903,6 @@ class Command(_BaseCommand, Generic[CogT, P, T]):
     def get_cooldown_retry_after(self, ctx: Context) -> float:
         """Retrieves the amount of seconds before this command can be tried again.
 
-        .. versionadded:: 1.4
 
         Parameters
         -----------
@@ -985,7 +978,6 @@ class Command(_BaseCommand, Generic[CogT, P, T]):
     def has_error_handler(self) -> bool:
         """:class:`bool`: Checks whether the command has an error handler registered.
 
-        .. versionadded:: 1.7
         """
         return hasattr(self, "on_error")
 
@@ -1827,7 +1819,6 @@ def check_any(*checks: Check) -> Callable[[T], T]:
 
         The ``predicate`` attribute for this function **is** a coroutine.
 
-    .. versionadded:: 1.3
 
     Parameters
     ------------
@@ -2128,7 +2119,6 @@ def has_guild_permissions(**perms: bool) -> Callable[[T], T]:
     If this check is called in a DM context, it will raise an
     exception, :exc:`.NoPrivateMessage`.
 
-    .. versionadded:: 1.3
     """
 
     invalid = set(perms) - set(discpy.Permissions.VALID_FLAGS)
@@ -2156,7 +2146,6 @@ def bot_has_guild_permissions(**perms: bool) -> Callable[[T], T]:
     """Similar to :func:`.has_guild_permissions`, but checks the bot
     members guild permissions.
 
-    .. versionadded:: 1.3
     """
 
     invalid = set(perms) - set(discpy.Permissions.VALID_FLAGS)
@@ -2188,7 +2177,6 @@ def dm_only() -> Callable[[T], T]:
     This check raises a special exception, :exc:`.PrivateMessageOnly`
     that is inherited from :exc:`.CheckFailure`.
 
-    .. versionadded:: 1.1
     """
 
     def predicate(ctx: Context) -> bool:
@@ -2320,7 +2308,6 @@ def dynamic_cooldown(
 
     A command can only have a single cooldown.
 
-    .. versionadded:: 2.0
 
     Parameters
     ------------
@@ -2353,7 +2340,6 @@ def max_concurrency(
     differs from a cooldown in that there is no set waiting period or token bucket -- only
     a set number of people can run the command.
 
-    .. versionadded:: 1.3
 
     Parameters
     -------------
@@ -2386,7 +2372,6 @@ def before_invoke(coro) -> Callable[[T], T]:
     This allows you to refer to one before invoke hook for several commands that
     do not have to be within the same cog.
 
-    .. versionadded:: 1.4
 
     Example
     ---------
@@ -2435,7 +2420,6 @@ def after_invoke(coro) -> Callable[[T], T]:
     This allows you to refer to one after invoke hook for several commands that
     do not have to be within the same cog.
 
-    .. versionadded:: 1.4
     """
 
     def decorator(func: Union[Command, CoroFunc]) -> Union[Command, CoroFunc]:

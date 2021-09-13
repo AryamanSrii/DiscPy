@@ -540,7 +540,6 @@ class GuildChannel:
 
         If there is no category then this is ``False``.
 
-        .. versionadded:: 1.3
         """
         if self.category_id is None:
             return False
@@ -867,7 +866,6 @@ class GuildChannel:
         You must have the :attr:`~discpy.Permissions.manage_channels` permission to
         do this.
 
-        .. versionadded:: 1.1
 
         Parameters
         ------------
@@ -954,7 +952,6 @@ class GuildChannel:
             Voice channels will always be sorted below text channels.
             This is a Discord limitation.
 
-        .. versionadded:: 1.7
 
         Parameters
         ------------
@@ -1107,17 +1104,14 @@ class GuildChannel:
         target_type: Optional[:class:`.InviteTarget`]
             The type of target for the voice channel invite, if any.
 
-            .. versionadded:: 2.0
 
         target_user: Optional[:class:`User`]
             The user whose stream to display for this invite, required if `target_type` is `TargetType.stream`. The user must be streaming in the channel.
 
-            .. versionadded:: 2.0
 
         target_application_id:: Optional[:class:`int`]
             The id of the embedded application for the invite, required if `target_type` is `TargetType.embedded_application`.
 
-            .. versionadded:: 2.0
 
         Raises
         -------
@@ -1329,7 +1323,6 @@ class Messageable:
             If no object is passed at all then the defaults given by :attr:`~discpy.Client.allowed_mentions`
             are used instead.
 
-            .. versionadded:: 1.4
 
         reference: Union[:class:`~discpy.Message`, :class:`~discpy.MessageReference`, :class:`~discpy.PartialMessage`]
             A reference to the :class:`~discpy.Message` to which you are replying, this can be created using
@@ -1337,22 +1330,18 @@ class Messageable:
             whether this mentions the author of the referenced message using the :attr:`~discpy.AllowedMentions.replied_user`
             attribute of ``allowed_mentions`` or by setting ``mention_author``.
 
-            .. versionadded:: 1.6
 
         mention_author: Optional[:class:`bool`]
             If set, overrides the :attr:`~discpy.AllowedMentions.replied_user` attribute of ``allowed_mentions``.
 
-            .. versionadded:: 1.6
         view: :class:`discpy.ui.View`
             A Discord UI View to add to the message.
         embeds: List[:class:`~discpy.Embed`]
             A list of embeds to upload. Must be a maximum of 10.
 
-            .. versionadded:: 2.0
         stickers: Sequence[Union[:class:`~discpy.GuildSticker`, :class:`~discpy.StickerItem`]]
             A list of stickers to upload. Must be a maximum of 3.
 
-            .. versionadded:: 2.0
 
         Raises
         --------

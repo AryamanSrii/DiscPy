@@ -74,7 +74,6 @@ class Component:
 
     This class is abstract and cannot be instantiated.
 
-    .. versionadded:: 2.0
 
     Attributes
     ------------
@@ -114,7 +113,6 @@ class ActionRow(Component):
 
     This inherits from :class:`Component`.
 
-    .. versionadded:: 2.0
 
     Attributes
     ------------
@@ -151,7 +149,6 @@ class Button(Component):
         The user constructible and usable type to create a button is :class:`discpy.ui.Button`
         not this one.
 
-    .. versionadded:: 2.0
 
     Attributes
     -----------
@@ -224,7 +221,6 @@ class SelectMenu(Component):
         The user constructible and usable type to create a select menu is
         :class:`discpy.ui.Select` not this one.
 
-    .. versionadded:: 2.0
 
     Attributes
     ------------
@@ -287,7 +283,6 @@ class SelectOption:
 
     These can be created by users.
 
-    .. versionadded:: 2.0
 
     Attributes
     -----------

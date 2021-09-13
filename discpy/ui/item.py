@@ -60,7 +60,6 @@ class Item(Generic[V]):
     - :class:`discpy.ui.Button`
     - :class:`discpy.ui.Select`
 
-    .. versionadded:: 2.0
     """
 
     __item_repr_attributes__: Tuple[str, ...] = ("row",)

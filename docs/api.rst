@@ -209,7 +209,6 @@ to handle it, which defaults to print a traceback and ignoring the exception.
     Similar to :func:`on_connect` except used by :class:`AutoShardedClient`
     to denote when a particular shard ID has connected to Discord.
 
-    .. versionadded:: 1.4
 
     :param shard_id: The shard ID that has connected.
     :type shard_id: :class:`int`
@@ -227,7 +226,6 @@ to handle it, which defaults to print a traceback and ignoring the exception.
     Similar to :func:`on_disconnect` except used by :class:`AutoShardedClient`
     to denote when a particular shard ID has disconnected from Discord.
 
-    .. versionadded:: 1.4
 
     :param shard_id: The shard ID that has disconnected.
     :type shard_id: :class:`int`
@@ -261,7 +259,6 @@ to handle it, which defaults to print a traceback and ignoring the exception.
     Similar to :func:`on_resumed` except used by :class:`AutoShardedClient`
     to denote when a particular shard ID has resumed a session.
 
-    .. versionadded:: 1.4
 
     :param shard_id: The shard ID that has resumed.
     :type shard_id: :class:`int`
@@ -305,7 +302,6 @@ to handle it, which defaults to print a traceback and ignoring the exception.
     This is mainly useful for logging how many events you are receiving
     from the Discord gateway.
 
-    .. versionadded:: 2.0
 
     :param event_type: The event type from Discord that is received, e.g. ``'READY'``.
     :type event_type: :class:`str`
@@ -594,7 +590,6 @@ to handle it, which defaults to print a traceback and ignoring the exception.
 
     This requires :attr:`Intents.reactions` to be enabled.
 
-    .. versionadded:: 1.3
 
     :param reaction: The reaction that got cleared.
     :type reaction: :class:`Reaction`
@@ -606,7 +601,6 @@ to handle it, which defaults to print a traceback and ignoring the exception.
 
     This requires :attr:`Intents.reactions` to be enabled.
 
-    .. versionadded:: 1.3
 
     :param payload: The raw event payload data.
     :type payload: :class:`RawReactionClearEmojiEvent`
@@ -623,7 +617,6 @@ to handle it, which defaults to print a traceback and ignoring the exception.
         If you are working with components, consider using the callbacks associated
         with the :class:`~discpy.ui.View` instead as it provides a nicer user experience.
 
-    .. versionadded:: 2.0
 
     :param interaction: The interaction data.
     :type interaction: :class:`Interaction`
@@ -691,7 +684,6 @@ to handle it, which defaults to print a traceback and ignoring the exception.
 
     This requires :attr:`Intents.guilds` to be enabled.
 
-    .. versionadded:: 2.0
 
     :param thread: The thread that got joined.
     :type thread: :class:`Thread`
@@ -711,7 +703,6 @@ to handle it, which defaults to print a traceback and ignoring the exception.
         locally, the API only sends updated thread membership status upon being
         synced by joining a thread.
 
-    .. versionadded:: 2.0
 
     :param thread: The thread that got removed.
     :type thread: :class:`Thread`
@@ -724,7 +715,6 @@ to handle it, which defaults to print a traceback and ignoring the exception.
 
     This requires :attr:`Intents.guilds` to be enabled.
 
-    .. versionadded:: 2.0
 
     :param thread: The thread that got deleted.
     :type thread: :class:`Thread`
@@ -738,7 +728,6 @@ to handle it, which defaults to print a traceback and ignoring the exception.
 
     This requires :attr:`Intents.members` to be enabled.
 
-    .. versionadded:: 2.0
 
     :param member: The member who joined or left.
     :type member: :class:`ThreadMember`
@@ -749,7 +738,6 @@ to handle it, which defaults to print a traceback and ignoring the exception.
 
     This requires :attr:`Intents.guilds` to be enabled.
 
-    .. versionadded:: 2.0
 
     :param before: The updated thread's old info.
     :type before: :class:`Thread`
@@ -762,7 +750,6 @@ to handle it, which defaults to print a traceback and ignoring the exception.
 
     This requires :attr:`Intents.integrations` to be enabled.
 
-    .. versionadded:: 1.4
 
     :param guild: The guild that had its integrations updated.
     :type guild: :class:`Guild`
@@ -773,7 +760,6 @@ to handle it, which defaults to print a traceback and ignoring the exception.
 
     This requires :attr:`Intents.integrations` to be enabled.
 
-    .. versionadded:: 2.0
 
     :param integration: The integration that was created.
     :type integration: :class:`Integration`
@@ -784,7 +770,6 @@ to handle it, which defaults to print a traceback and ignoring the exception.
 
     This requires :attr:`Intents.integrations` to be enabled.
 
-    .. versionadded:: 2.0
 
     :param integration: The integration that was created.
     :type integration: :class:`Integration`
@@ -795,7 +780,6 @@ to handle it, which defaults to print a traceback and ignoring the exception.
 
     This requires :attr:`Intents.integrations` to be enabled.
 
-    .. versionadded:: 2.0
 
     :param payload: The raw event payload data.
     :type payload: :class:`RawIntegrationDeleteEvent`
@@ -847,7 +831,6 @@ to handle it, which defaults to print a traceback and ignoring the exception.
 
     This requires :attr:`Intents.presences` and :attr:`Intents.members` to be enabled.
 
-    .. versionadded:: 2.0
 
     :param before: The updated member's old info.
     :type before: :class:`Member`
@@ -958,7 +941,6 @@ to handle it, which defaults to print a traceback and ignoring the exception.
 
     This requires :attr:`Intents.emojis_and_stickers` to be enabled.
 
-    .. versionadded:: 2.0
 
     :param guild: The guild who got their stickers updated.
     :type guild: :class:`Guild`
@@ -1002,7 +984,6 @@ to handle it, which defaults to print a traceback and ignoring the exception.
 
     Called when a :class:`StageInstance` is created or deleted for a :class:`StageChannel`.
 
-    .. versionadded:: 2.0
 
     :param stage_instance: The stage instance that was created or deleted.
     :type stage_instance: :class:`StageInstance`
@@ -1016,7 +997,6 @@ to handle it, which defaults to print a traceback and ignoring the exception.
     - The topic is changed.
     - The privacy level is changed.
 
-    .. versionadded:: 2.0
 
     :param before: The stage instance before the update.
     :type before: :class:`StageInstance`
@@ -1052,7 +1032,6 @@ to handle it, which defaults to print a traceback and ignoring the exception.
     Called when an :class:`Invite` is created.
     You must have the :attr:`~Permissions.manage_channels` permission to receive this.
 
-    .. versionadded:: 1.3
 
     .. note::
 
@@ -1069,7 +1048,6 @@ to handle it, which defaults to print a traceback and ignoring the exception.
     Called when an :class:`Invite` is deleted.
     You must have the :attr:`~Permissions.manage_channels` permission to receive this.
 
-    .. versionadded:: 1.3
 
     .. note::
 
@@ -1167,25 +1145,21 @@ of :class:`enum.Enum`.
 
         A guild stage voice channel.
 
-        .. versionadded:: 1.7
 
     .. attribute:: news_thread
 
         A news thread
 
-        .. versionadded:: 2.0
 
     .. attribute:: public_thread
 
         A public thread
 
-        .. versionadded:: 2.0
 
     .. attribute:: private_thread
 
         A private thread
 
-        .. versionadded:: 2.0
 
 .. class:: MessageType
 
@@ -1248,36 +1222,30 @@ of :class:`enum.Enum`.
 
         The system message denoting that an announcement channel has been followed.
 
-        .. versionadded:: 1.3
     .. attribute:: guild_stream
 
         The system message denoting that a member is streaming in the guild.
 
-        .. versionadded:: 1.7
     .. attribute:: guild_discovery_disqualified
 
         The system message denoting that the guild is no longer eligible for Server
         Discovery.
 
-        .. versionadded:: 1.7
     .. attribute:: guild_discovery_requalified
 
         The system message denoting that the guild has become eligible again for Server
         Discovery.
 
-        .. versionadded:: 1.7
     .. attribute:: guild_discovery_grace_period_initial_warning
 
         The system message denoting that the guild has failed to meet the Server
         Discovery requirements for one week.
 
-        .. versionadded:: 1.7
     .. attribute:: guild_discovery_grace_period_final_warning
 
         The system message denoting that the guild has failed to meet the Server
         Discovery requirements for 3 weeks in a row.
 
-        .. versionadded:: 1.7
     .. attribute:: thread_created
 
         The system message denoting that a thread has been created. This is only
@@ -1285,28 +1253,23 @@ of :class:`enum.Enum`.
         required for a message to be considered old cannot be relied upon and is up to
         Discord.
 
-        .. versionadded:: 2.0
     .. attribute:: reply
 
         The system message denoting that the author is replying to a message.
 
-        .. versionadded:: 2.0
     .. attribute:: application_command
 
         The system message denoting that an application (or "slash") command was executed.
 
-        .. versionadded:: 2.0
     .. attribute:: guild_invite_reminder
 
         The system message sent as a reminder to invite people to the guild.
 
-        .. versionadded:: 2.0
     .. attribute:: thread_starter_message
 
         The system message denoting the message in the thread that is the one that started the
         thread's conversation topic.
 
-        .. versionadded:: 2.0
 
 .. class:: UserFlags
 
@@ -1391,13 +1354,11 @@ of :class:`enum.Enum`.
 
         A competing activity type.
 
-        .. versionadded:: 1.5
 
 .. class:: InteractionType
 
     Specifies the type of :class:`Interaction`.
 
-    .. versionadded:: 2.0
 
     .. attribute:: ping
 
@@ -1413,7 +1374,6 @@ of :class:`enum.Enum`.
 
     Specifies the response type for the interaction.
 
-    .. versionadded:: 2.0
 
     .. attribute:: pong
 
@@ -1446,7 +1406,6 @@ of :class:`enum.Enum`.
 
     Represents the component type of a component.
 
-    .. versionadded:: 2.0
 
     .. attribute:: action_row
 
@@ -1463,7 +1422,6 @@ of :class:`enum.Enum`.
 
     Represents the style of the button component.
 
-    .. versionadded:: 2.0
 
     .. attribute:: primary
 
@@ -1514,7 +1472,6 @@ of :class:`enum.Enum`.
 
         The Dubai region.
 
-        .. versionadded:: 1.3
 
     .. attribute:: eu_central
 
@@ -1526,7 +1483,6 @@ of :class:`enum.Enum`.
 
         The Europe region.
 
-        .. versionadded:: 1.3
 
     .. attribute:: frankfurt
 
@@ -1538,7 +1494,6 @@ of :class:`enum.Enum`.
 
         The India region.
 
-        .. versionadded:: 1.2
 
     .. attribute:: japan
 
@@ -1590,7 +1545,6 @@ of :class:`enum.Enum`.
 
     .. container:: operations
 
-        .. versionadded:: 2.0
 
         .. describe:: x == y
 
@@ -1636,7 +1590,6 @@ of :class:`enum.Enum`.
 
     .. container:: operations
 
-        .. versionadded:: 2.0
 
         .. describe:: x == y
 
@@ -1672,7 +1625,6 @@ of :class:`enum.Enum`.
 
     .. container:: operations
 
-        .. versionadded:: 2.0
 
         .. describe:: x == y
 
@@ -1954,7 +1906,6 @@ of :class:`enum.Enum`.
         - ``channel``: A :class:`TextChannel` or :class:`Object` with the channel ID where the members were moved.
         - ``count``: An integer specifying how many members were moved.
 
-        .. versionadded:: 1.3
 
     .. attribute:: member_disconnect
 
@@ -1966,7 +1917,6 @@ of :class:`enum.Enum`.
 
         - ``count``: An integer specifying how many members were disconnected.
 
-        .. versionadded:: 1.3
 
     .. attribute:: bot_add
 
@@ -1975,7 +1925,6 @@ of :class:`enum.Enum`.
         When this is the action, the type of :attr:`~AuditLogEntry.target` is
         the :class:`Member` or :class:`User` which was added to the guild.
 
-        .. versionadded:: 1.3
 
     .. attribute:: role_create
 
@@ -2169,7 +2118,6 @@ of :class:`enum.Enum`.
 
         - ``count``: An integer specifying how many messages were deleted.
 
-        .. versionadded:: 1.3
 
     .. attribute:: message_pin
 
@@ -2184,7 +2132,6 @@ of :class:`enum.Enum`.
         - ``channel``: A :class:`TextChannel` or :class:`Object` with the channel ID where the message was pinned.
         - ``message_id``: the ID of the message which was pinned.
 
-        .. versionadded:: 1.3
 
     .. attribute:: message_unpin
 
@@ -2199,7 +2146,6 @@ of :class:`enum.Enum`.
         - ``channel``: A :class:`TextChannel` or :class:`Object` with the channel ID where the message was unpinned.
         - ``message_id``: the ID of the message which was unpinned.
 
-        .. versionadded:: 1.3
 
     .. attribute:: integration_create
 
@@ -2208,7 +2154,6 @@ of :class:`enum.Enum`.
         When this is the action, the type of :attr:`~AuditLogEntry.target` is
         the :class:`Object` with the integration ID of the integration which was created.
 
-        .. versionadded:: 1.3
 
     .. attribute:: integration_update
 
@@ -2217,7 +2162,6 @@ of :class:`enum.Enum`.
         When this is the action, the type of :attr:`~AuditLogEntry.target` is
         the :class:`Object` with the integration ID of the integration which was updated.
 
-        .. versionadded:: 1.3
 
     .. attribute:: integration_delete
 
@@ -2226,7 +2170,6 @@ of :class:`enum.Enum`.
         When this is the action, the type of :attr:`~AuditLogEntry.target` is
         the :class:`Object` with the integration ID of the integration which was deleted.
 
-        .. versionadded:: 1.3
 
     .. attribute:: stage_instance_create
 
@@ -2241,7 +2184,6 @@ of :class:`enum.Enum`.
         - :attr:`~AuditLogDiff.topic`
         - :attr:`~AuditLogDiff.privacy_level`
 
-        .. versionadded:: 2.0
 
     .. attribute:: stage_instance_update
 
@@ -2256,13 +2198,11 @@ of :class:`enum.Enum`.
         - :attr:`~AuditLogDiff.topic`
         - :attr:`~AuditLogDiff.privacy_level`
 
-        .. versionadded:: 2.0
 
     .. attribute:: stage_instance_delete
 
         A stage instance was ended.
 
-        .. versionadded:: 2.0
 
     .. attribute:: sticker_create
 
@@ -2281,7 +2221,6 @@ of :class:`enum.Enum`.
         - :attr:`~AuditLogDiff.description`
         - :attr:`~AuditLogDiff.available`
 
-        .. versionadded:: 2.0
 
     .. attribute:: sticker_update
 
@@ -2300,7 +2239,6 @@ of :class:`enum.Enum`.
         - :attr:`~AuditLogDiff.description`
         - :attr:`~AuditLogDiff.available`
 
-        .. versionadded:: 2.0
 
     .. attribute:: sticker_delete
 
@@ -2319,7 +2257,6 @@ of :class:`enum.Enum`.
         - :attr:`~AuditLogDiff.description`
         - :attr:`~AuditLogDiff.available`
 
-        .. versionadded:: 2.0
 
     .. attribute:: thread_create
 
@@ -2336,7 +2273,6 @@ of :class:`enum.Enum`.
         - :attr:`~AuditLogDiff.locked`
         - :attr:`~AuditLogDiff.auto_archive_duration`
 
-        .. versionadded:: 2.0
 
     .. attribute:: thread_update
 
@@ -2353,7 +2289,6 @@ of :class:`enum.Enum`.
         - :attr:`~AuditLogDiff.locked`
         - :attr:`~AuditLogDiff.auto_archive_duration`
 
-        .. versionadded:: 2.0
 
     .. attribute:: thread_delete
 
@@ -2370,7 +2305,6 @@ of :class:`enum.Enum`.
         - :attr:`~AuditLogDiff.locked`
         - :attr:`~AuditLogDiff.auto_archive_duration`
 
-        .. versionadded:: 2.0
 
 .. class:: AuditLogActionCategory
 
@@ -2394,7 +2328,6 @@ of :class:`enum.Enum`.
 
     Represents the membership state of a team member retrieved through :func:`Client.application_info`.
 
-    .. versionadded:: 1.3
 
     .. attribute:: invited
 
@@ -2408,7 +2341,6 @@ of :class:`enum.Enum`.
 
     Represents the type of webhook that can be received.
 
-    .. versionadded:: 1.3
 
     .. attribute:: incoming
 
@@ -2422,7 +2354,6 @@ of :class:`enum.Enum`.
 
         Represents a webhook that is used for interactions or applications.
 
-        .. versionadded:: 2.0
 
 .. class:: ExpireBehaviour
 
@@ -2431,7 +2362,6 @@ of :class:`enum.Enum`.
 
     There is an alias for this called ``ExpireBehavior``.
 
-    .. versionadded:: 1.4
 
     .. attribute:: remove_role
 
@@ -2474,7 +2404,6 @@ of :class:`enum.Enum`.
 
     Represents the type of sticker.
 
-    .. versionadded:: 2.0
 
     .. attribute:: standard
 
@@ -2488,7 +2417,6 @@ of :class:`enum.Enum`.
 
     Represents the type of sticker images.
 
-    .. versionadded:: 1.6
 
     .. attribute:: png
 
@@ -2506,7 +2434,6 @@ of :class:`enum.Enum`.
 
     Represents the invite type for voice channel invites.
 
-    .. versionadded:: 2.0
 
     .. attribute:: unknown
 
@@ -2524,7 +2451,6 @@ of :class:`enum.Enum`.
 
     Represents the camera video quality mode for voice channel participants.
 
-    .. versionadded:: 2.0
 
     .. attribute:: auto
 
@@ -2538,7 +2464,6 @@ of :class:`enum.Enum`.
 
     Represents a stage instance's privacy level.
 
-    .. versionadded:: 2.0
 
     .. attribute:: public
 
@@ -2556,7 +2481,6 @@ of :class:`enum.Enum`.
 
     Represents the NSFW level of a guild.
 
-    .. versionadded:: 2.0
 
     .. container:: operations
 
@@ -2675,7 +2599,6 @@ Certain utilities make working with async iterators easier, detailed below.
         Another :class:`AsyncIterator` is returned which collects items into
         :class:`list`\s of a given size. The maximum chunk size must be a positive integer.
 
-        .. versionadded:: 1.6
 
         Collecting groups of users: ::
 

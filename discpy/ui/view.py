@@ -130,7 +130,6 @@ class View:
 
     This object must be inherited to create a UI within Discord.
 
-    .. versionadded:: 2.0
 
     Parameters
     -----------

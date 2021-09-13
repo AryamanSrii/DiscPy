@@ -79,7 +79,6 @@ class Thread(Messageable, Hashable):
 
             Returns the thread's name.
 
-    .. versionadded:: 2.0
 
     Attributes
     -----------
@@ -720,7 +719,6 @@ class Thread(Messageable, Hashable):
         This is useful if you want to work with a message and only have its ID without
         doing an unnecessary API call.
 
-        .. versionadded:: 2.0
 
         Parameters
         ------------
@@ -765,7 +763,6 @@ class ThreadMember(Hashable):
 
             Returns the thread member's name.
 
-    .. versionadded:: 2.0
 
     Attributes
     -----------

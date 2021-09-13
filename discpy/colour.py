@@ -156,14 +156,12 @@ class Colour:
             The random algorithm works by choosing a colour with a random hue but
             with maxed out saturation and value.
 
-        .. versionadded:: 1.6
 
         Parameters
         ------------
         seed: Optional[Union[:class:`int`, :class:`str`, :class:`float`, :class:`bytes`, :class:`bytearray`]]
             The seed to initialize the RNG with. If ``None`` is passed the default RNG is used.
 
-            .. versionadded:: 1.7
         """
         rand = random if seed is None else random.Random(seed)
         return cls.from_hsv(rand.random(), 1, 1)
@@ -182,7 +180,6 @@ class Colour:
     def brand_green(cls: Type[CT]) -> CT:
         """A factory method that returns a :class:`Colour` with a value of ``0x57F287``.
 
-        .. versionadded:: 2.0
         """
         return cls(0x57F287)
 
@@ -250,7 +247,6 @@ class Colour:
     def brand_red(cls: Type[CT]) -> CT:
         """A factory method that returns a :class:`Colour` with a value of ``0xED4245``.
 
-        .. versionadded:: 2.0
         """
         return cls(0xED4245)
 
@@ -312,7 +308,6 @@ class Colour:
         """A factory method that returns a :class:`Colour` with a value of ``0x36393F``.
         This will appear transparent on Discord's dark theme.
 
-        .. versionadded:: 1.5
         """
         return cls(0x36393F)
 
@@ -320,7 +315,6 @@ class Colour:
     def fuchsia(cls: Type[CT]) -> CT:
         """A factory method that returns a :class:`Colour` with a value of ``0xEB459E``.
 
-        .. versionadded:: 2.0
         """
         return cls(0xEB459E)
 
@@ -328,7 +322,6 @@ class Colour:
     def yellow(cls: Type[CT]) -> CT:
         """A factory method that returns a :class:`Colour` with a value of ``0xFEE75C``.
 
-        .. versionadded:: 2.0
         """
         return cls(0xFEE75C)
 

@@ -228,7 +228,6 @@ class SystemChannelFlags(BaseFlags):
     def guild_reminder_notifications(self):
         """:class:`bool`: Returns ``True`` if the system channel is used for server setup helpful tips notifications.
 
-        .. versionadded:: 2.0
         """
         return 4
 
@@ -255,7 +254,6 @@ class MessageFlags(BaseFlags):
                Returns an iterator of ``(name, value)`` pairs. This allows it
                to be, for example, constructed as a dict or a list of pairs.
 
-    .. versionadded:: 1.3
 
     Attributes
     -----------
@@ -299,7 +297,6 @@ class MessageFlags(BaseFlags):
     def has_thread(self):
         """:class:`bool`: Returns ``True`` if the source message is associated with a thread.
 
-        .. versionadded:: 2.0
         """
         return 32
 
@@ -307,7 +304,6 @@ class MessageFlags(BaseFlags):
     def ephemeral(self):
         """:class:`bool`: Returns ``True`` if the source message is ephemeral.
 
-        .. versionadded:: 2.0
         """
         return 64
 
@@ -333,7 +329,6 @@ class PublicUserFlags(BaseFlags):
             to be, for example, constructed as a dict or a list of pairs.
             Note that aliases are not shown.
 
-    .. versionadded:: 1.4
 
     Attributes
     -----------
@@ -414,7 +409,6 @@ class PublicUserFlags(BaseFlags):
     def early_verified_bot_developer(self):
         """:class:`bool`: An alias for :attr:`verified_bot_developer`.
 
-        .. versionadded:: 1.5
         """
         return UserFlags.verified_bot_developer.value
 
@@ -422,7 +416,6 @@ class PublicUserFlags(BaseFlags):
     def discord_certified_moderator(self):
         """:class:`bool`: Returns ``True`` if the user is a Discord Certified Moderator.
 
-        .. versionadded:: 2.0
         """
         return UserFlags.discord_certified_moderator.value
 
@@ -450,7 +443,6 @@ class Intents(BaseFlags):
     run your bot. To make use of this, it is passed to the ``intents`` keyword
     argument of :class:`Client`.
 
-    .. versionadded:: 1.5
 
     .. container:: operations
 
@@ -597,7 +589,6 @@ class Intents(BaseFlags):
     def emojis_and_stickers(self):
         """:class:`bool`: Whether guild emoji and sticker related events are enabled.
 
-        .. versionadded:: 2.0
 
         This corresponds to the following events:
 
@@ -905,7 +896,6 @@ class MemberCacheFlags(BaseFlags):
 
     The default value is all flags enabled.
 
-    .. versionadded:: 1.5
 
     .. container:: operations
 
@@ -1038,7 +1028,6 @@ class ApplicationFlags(BaseFlags):
             to be, for example, constructed as a dict or a list of pairs.
             Note that aliases are not shown.
 
-    .. versionadded:: 2.0
 
     Attributes
     -----------

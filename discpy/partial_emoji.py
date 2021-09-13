@@ -128,7 +128,6 @@ class PartialEmoji(_EmojiTag, AssetMixin):
 
         If the format does not match then it is assumed to be a unicode emoji.
 
-        .. versionadded:: 2.0
 
         Parameters
         ------------
@@ -215,7 +214,6 @@ class PartialEmoji(_EmojiTag, AssetMixin):
     def created_at(self) -> Optional[datetime]:
         """Optional[:class:`datetime.datetime`]: Returns the emoji's creation time in UTC, or None if Unicode emoji.
 
-        .. versionadded:: 1.6
         """
         if self.id is None:
             return None

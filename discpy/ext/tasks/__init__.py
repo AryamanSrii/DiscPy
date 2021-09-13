@@ -232,7 +232,6 @@ class Loop(Generic[LF]):
         """Optional[:class:`float`]: Read-only value for the number of seconds
         between each iteration. ``None`` if an explicit ``time`` value was passed instead.
 
-        .. versionadded:: 2.0
         """
         if self._seconds is not MISSING:
             return self._seconds
@@ -242,7 +241,6 @@ class Loop(Generic[LF]):
         """Optional[:class:`float`]: Read-only value for the number of minutes
         between each iteration. ``None`` if an explicit ``time`` value was passed instead.
 
-        .. versionadded:: 2.0
         """
         if self._minutes is not MISSING:
             return self._minutes
@@ -252,7 +250,6 @@ class Loop(Generic[LF]):
         """Optional[:class:`float`]: Read-only value for the number of hours
         between each iteration. ``None`` if an explicit ``time`` value was passed instead.
 
-        .. versionadded:: 2.0
         """
         if self._hours is not MISSING:
             return self._hours
@@ -262,7 +259,6 @@ class Loop(Generic[LF]):
         """Optional[List[:class:`datetime.time`]]: Read-only list for the exact times this loop runs at.
         ``None`` if relative times were passed instead.
 
-        .. versionadded:: 2.0
         """
         if self._time is not MISSING:
             return self._time.copy()
@@ -276,7 +272,6 @@ class Loop(Generic[LF]):
     def next_iteration(self) -> Optional[datetime.datetime]:
         """Optional[:class:`datetime.datetime`]: When the next iteration of the loop will occur.
 
-        .. versionadded:: 1.3
         """
         if self._task is MISSING:
             return None
@@ -289,7 +284,6 @@ class Loop(Generic[LF]):
 
         Calls the internal callback that the task holds.
 
-        .. versionadded:: 1.6
 
         Parameters
         ------------
@@ -353,7 +347,6 @@ class Loop(Generic[LF]):
             before stopping via :meth:`clear_exception_types` or
             use :meth:`cancel` instead.
 
-        .. versionadded:: 1.2
         """
         if self._task is not MISSING and not self._task.done():
             self._stop_next_iteration = True
@@ -462,14 +455,12 @@ class Loop(Generic[LF]):
     def failed(self) -> bool:
         """:class:`bool`: Whether the internal task has failed.
 
-        .. versionadded:: 1.2
         """
         return self._has_failed
 
     def is_running(self) -> bool:
         """:class:`bool`: Check if the task is currently running.
 
-        .. versionadded:: 1.4
         """
         return not bool(self._task.done()) if self._task is not MISSING else False
 
@@ -548,7 +539,6 @@ class Loop(Generic[LF]):
         By default this prints to :data:`sys.stderr` however it could be
         overridden to have a different implementation.
 
-        .. versionadded:: 1.4
 
         Parameters
         ------------
@@ -653,7 +643,6 @@ class Loop(Generic[LF]):
     ) -> None:
         """Changes the interval for the sleep time.
 
-        .. versionadded:: 1.2
 
         Parameters
         ------------
@@ -668,7 +657,6 @@ class Loop(Generic[LF]):
             value of :class:`datetime.time` should be passed.
             This cannot be used in conjunction with the relative time parameters.
 
-            .. versionadded:: 2.0
 
             .. note::
 
@@ -745,7 +733,6 @@ def loop(
 
             Duplicate times will be ignored, and only run once.
 
-        .. versionadded:: 2.0
 
     count: Optional[:class:`int`]
         The number of loops to do, ``None`` if it should be an

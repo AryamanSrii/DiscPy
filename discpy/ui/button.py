@@ -51,7 +51,6 @@ V = TypeVar("V", bound="View", covariant=True)
 class Button(Item[V]):
     """Represents a UI button.
 
-    .. versionadded:: 2.0
 
     Parameters
     ------------
