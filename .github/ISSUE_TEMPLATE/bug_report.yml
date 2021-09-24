@@ -55,9 +55,6 @@ body:
       label: System Information
       description: >
         Run `python -m discpy -v` and paste this information below.
-
-        This command required v1.0.0 or higher of the library. If this errors out then show some basic
-        information involving your system such as operating system and Python version.
     validations:
       required: true
   - type: checkboxes
