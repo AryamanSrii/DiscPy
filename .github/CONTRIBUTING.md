@@ -1,4 +1,4 @@
-## Contributing to PyDiscord
+## Contributing to DiscPy
 
 First off, thanks for taking the time to contribute. It makes the library substantially better. :+1:
 
@@ -8,8 +8,8 @@ The following is a set of guidelines for contributing to the repository. These a
 
 Generally speaking questions are better suited in our resources below.
 
-- The official support server: https://discord.gg/r3sSKJJ
-- [The FAQ in the documentation](https://pydiscord.readthedocs.io/en/latest/faq.html)
+- [The official support server](https://discord.gg/z5VQEjskEs)
+- [The FAQ in the documentation](https://discpy.readthedocs.io/en/latest/faq.html)
 
 Please try your best not to ask questions in our issue tracker. Most of them don't belong there unless they provide value to a larger audience.
 
